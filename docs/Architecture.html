@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Architecture Documentation</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a title="Architecture Documentation"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+           Docs
+        </a>
+         (100% documented)
+      </p>
+
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/kvnloo/AudioEngine">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html"> Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Architecture Documentation
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/APIManager.html">APIManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Audio.html">Audio</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/CustomUITextField.html">CustomUITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/EqualizerViewController.html">EqualizerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/GeneralUIButton.html">GeneralUIButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/GeneralUILabel.html">GeneralUILabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/GeneralUITableView.html">GeneralUITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/GeneralUITextField.html">GeneralUITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/GeneralUIViewController.html">GeneralUIViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/InitialViewController.html">InitialViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LoginViewController.html">LoginViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RecordedAudioObject.html">RecordedAudioObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RecorderViewController.html">RecorderViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/SignUpViewController.html">SignUpViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/UIFont.html">UIFont</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/UINavigationBar.html">UINavigationBar</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Architecture.html">Architecture</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Architecture.html">Architecture Documentation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="TechnologyStack.html">Technology Stack</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>PhaseIWireframe Architecture Documentation</h1>
+
+            <h2>Overview</h2>
+            <p>PhaseIWireframe is an iOS application built with Swift 3.0+ that provides two primary features:</p>
+            <ol>
+              <li><strong>Real-time Noise Meter</strong> - Displays ambient noise levels in decibels</li>
+              <li><strong>14-Band Dual-Channel Audio Equalizer</strong> - Processes and equalizes audio in real-time</li>
+            </ol>
+            <p>The application follows the <strong>Model-View-Controller (MVC)</strong> architectural pattern with additional singleton managers for cross-cutting concerns.</p>
+
+            <h2>System Architecture</h2>
+            <pre><code>┌─────────────────────────────────────────────────────────────┐
+│                      Presentation Layer                      │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │ View         │  │ View         │  │ View         │       │
+│  │ Controllers  │  │ Controllers  │  │ Controllers  │       │
+│  │ (Auth)       │  │ (Equalizer)  │  │ (Noise Meter)│       │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘       │
+│         │                  │                  │               │
+└─────────┼──────────────────┼──────────────────┼───────────────┘
+          │                  │                  │
+┌─────────┼──────────────────┼──────────────────┼───────────────┐
+│         │         Business Logic Layer        │               │
+│  ┌──────▼───────┐  ┌──────▼───────┐  ┌───────▼──────┐        │
+│  │ APIManager   │  │ Audio        │  │ Data Models  │        │
+│  │ (Singleton)  │  │ (Singleton)  │  │ (User, etc.) │        │
+│  └──────┬───────┘  └──────┬───────┘  └──────────────┘        │
+└─────────┼──────────────────┼─────────────────────────────────┘
+          │                  │
+┌─────────┼──────────────────┼─────────────────────────────────┐
+│         │         Services & Frameworks Layer                 │
+│  ┌──────▼───────┐  ┌──────▼───────┐  ┌──────────────┐        │
+│  │ Firebase     │  │ AVFoundation │  │ Core Audio   │        │
+│  │ - Auth       │  │ - Recording  │  │ - Processing │        │
+│  │ - Database   │  │ - Playback   │  │              │        │
+│  └──────────────┘  └──────────────┘  └──────────────┘        │
+│                                                                │
+│  ┌──────────────┐  ┌──────────────┐                          │
+│  │ Facebook SDK │  │ Google       │                          │
+│  │              │  │ Sign-In SDK  │                          │
+│  └──────────────┘  └──────────────┘                          │
+└────────────────────────────────────────────────────────────────┘</code></pre>
+
+            <h2>Core Components</h2>
+
+            <h3>1. Application Entry Point</h3>
+            <ul>
+              <li><strong>AppDelegate.swift</strong> - Application lifecycle management
+                <ul>
+                  <li>Firebase configuration</li>
+                  <li>Google Sign-In setup</li>
+                  <li>Facebook SDK initialization</li>
+                  <li>Navigation bar appearance configuration</li>
+                  <li>Root view controller switching</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h3>2. Singleton Managers</h3>
+
+            <h4>APIManager (Authentication & Data)</h4>
+            <p><strong>Purpose:</strong> Centralized authentication and data persistence manager</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+              <li>Email/password authentication via Firebase</li>
+              <li>Social login (Facebook, Google) integration</li>
+              <li>User session management</li>
+              <li>Firebase Realtime Database operations</li>
+              <li>Alert presentation for user feedback</li>
+            </ul>
+
+            <h4>Audio (Audio Processing)</h4>
+            <p><strong>Purpose:</strong> Audio recording, playback, and equalizer processing singleton</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+              <li>AVAudioSession configuration</li>
+              <li>Audio recording via AVAudioRecorder</li>
+              <li>Audio playback with real-time equalizer processing</li>
+              <li>14-band dual-channel equalization</li>
+              <li>Recording file management</li>
+            </ul>
+
+            <h3>3. View Controllers</h3>
+
+            <h4>Authentication Flow</h4>
+            <ul>
+              <li><strong>InitialViewController</strong> - Landing page with authentication options</li>
+              <li><strong>LoginViewController</strong> - Email/password login form</li>
+              <li><strong>SignUpViewController</strong> - Account creation with social login options</li>
+            </ul>
+
+            <h4>Main Features</h4>
+            <ul>
+              <li><strong>EqualizerViewController</strong> - 14-band audio equalizer interface</li>
+              <li><strong>RecorderViewController</strong> - Audio recording interface</li>
+              <li><strong>NoiseMeterViewController</strong> - Real-time noise level display</li>
+              <li><strong>EqualizerTabBarController</strong> - Tab navigation between features</li>
+            </ul>
+
+            <h2>Design Patterns</h2>
+
+            <h3>1. Singleton Pattern</h3>
+            <p>Used for shared resources and cross-cutting concerns:</p>
+            <ul>
+              <li><strong>APIManager</strong>: Single point of authentication and data access</li>
+              <li><strong>Audio</strong>: Centralized audio processing and session management</li>
+            </ul>
+
+            <h3>2. Delegation Pattern</h3>
+            <p>Standard iOS pattern for event handling:</p>
+            <ul>
+              <li><strong>AVAudioRecorderDelegate</strong>: Recording lifecycle events</li>
+              <li><strong>GIDSignInDelegate</strong>: Google Sign-In callbacks</li>
+              <li><strong>TableView Delegates</strong>: Data source and user interaction handling</li>
+            </ul>
+
+            <h3>3. Notification Pattern</h3>
+            <p>Used for loosely-coupled view controller communication:</p>
+            <ul>
+              <li>initialNotification - Navigate to authentication screen</li>
+              <li>demoNotification - Navigate to main app features</li>
+            </ul>
+
+            <h3>4. Custom UI Component System</h3>
+            <p>Reusable, styled UI components with consistent theming:</p>
+            <ul>
+              <li>GeneralUIButton - Styled buttons</li>
+              <li>GeneralUILabel - Custom font labels</li>
+              <li>GeneralUITextField - Themed text inputs</li>
+              <li>GeneralUITableView / GeneralUITableViewCell - Styled tables</li>
+              <li>GeneralUIViewController - Base view controller with shared setup</li>
+            </ul>
+
+            <h2>Audio Processing Architecture</h2>
+
+            <h3>14-Band Dual-Channel Equalizer</h3>
+            <p>The application implements a sophisticated audio processing pipeline:</p>
+            <ul>
+              <li><strong>Left Channel:</strong> 14 AVAudioUnitEQFilter instances</li>
+              <li><strong>Right Channel:</strong> 14 AVAudioUnitEQFilter instances</li>
+              <li>Each band controls:
+                <ul>
+                  <li>Center Frequency (Hz)</li>
+                  <li>Gain (-12dB to +12dB)</li>
+                  <li>Bandwidth (Q factor)</li>
+                  <li>Filter Type: Parametric</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h3>Noise Meter</h3>
+            <p>Real-time noise level monitoring:</p>
+            <ul>
+              <li>Uses AVAudioRecorder metering</li>
+              <li>Converts Apple's power levels to standard decibels</li>
+              <li>Color-coded display ranges:
+                <ul>
+                  <li>Silent: &lt; 50 dB (Blue)</li>
+                  <li>Quiet: &lt; 75 dB (Green)</li>
+                  <li>Average: &lt; 90 dB (Purple)</li>
+                  <li>Noisy: &lt; 100 dB (Orange)</li>
+                  <li>Loud: &lt; 120 dB (Red)</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h2>UI Component System</h2>
+
+            <h3>Color Palette</h3>
+            <p><strong>Slate Colors (Grayscale Foundation):</strong></p>
+            <ul>
+              <li>WHITE (Isabelline: #edeeef) - Primary text color</li>
+              <li>CREME (Silver Chalice: #a8aeaf) - Navigation bar highlights, headings</li>
+              <li>CHARCOAL (Outer Space: #414e51) - TextField backgrounds</li>
+              <li>BACKGROUND (Gunmetal: #282d34) - View backgrounds</li>
+              <li>BLACK (Raisin Black: #1d2025) - Dark text, login button</li>
+            </ul>
+
+            <p><strong>Highlight Colors (Accent Palette):</strong></p>
+            <ul>
+              <li>RED (Light Red Ochre: #ea6552) - Alerts, loud noise indicator</li>
+              <li>GREEN (Very Light Malachite: #58e69a) - Success, quiet noise</li>
+              <li>PURPLE (Pale Violet: #d0a5ff) - Average noise level</li>
+              <li>BLUE (Maya Blue: #7cc6fe) - Silent noise level</li>
+              <li>ORANGE (Macaroni and Cheese: #ffc689) - Noisy level</li>
+            </ul>
+
+            <h3>Typography System</h3>
+            <ul>
+              <li>BUTTON - Roboto-Medium, 15pt</li>
+              <li>LABEL - Roboto-Regular, 12pt</li>
+              <li>TEXTFIELD - Roboto-Bold, 14pt</li>
+              <li>LARGE - Roboto-Bold, 80pt (Noise meter display)</li>
+              <li>CAPTION - Roboto-Regular, 10pt</li>
+            </ul>
+
+            <h2>Key Architectural Decisions</h2>
+
+            <h3>1. Singleton Pattern for Managers</h3>
+            <p><strong>Rationale:</strong></p>
+            <ul>
+              <li>Only one authentication session should exist</li>
+              <li>Only one AVAudioSession can be active</li>
+              <li>Simplifies access from any view controller</li>
+              <li>Prevents resource conflicts</li>
+            </ul>
+
+            <h3>2. Firebase for Backend</h3>
+            <p><strong>Rationale:</strong></p>
+            <ul>
+              <li>Real-time sync for EQ settings across devices</li>
+              <li>Built-in authentication with social providers</li>
+              <li>No custom backend infrastructure needed</li>
+              <li>Suitable for MVP/prototype phase</li>
+            </ul>
+
+            <h3>3. Dual-Channel Equalizer Architecture</h3>
+            <p><strong>Rationale:</strong></p>
+            <ul>
+              <li>True stereo processing capability</li>
+              <li>Industry-standard approach</li>
+              <li>Enables advanced panning effects</li>
+              <li>28 float values (14 bands × 2 channels) stored per user</li>
+            </ul>
+
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2017 <a class="link" href="https://github.com/kvnloo" target="_blank" rel="external">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
