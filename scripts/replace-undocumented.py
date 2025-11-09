@@ -564,6 +564,79 @@ def main():
     # Process summary pages (Classes.html and Extensions.html)
     print("\n🔍 Processing summary pages...")
 
+    # Add links to class references in Extensions.html
+    def add_class_links_to_extensions(html_file: Path):
+        """Convert class name references to proper links in Extensions.html"""
+        with open(html_file, 'r', encoding='utf-8') as f:
+            soup = BeautifulSoup(f.read(), 'html.parser')
+
+        # Dictionary of class names to link to
+        class_links = {
+            'GeneralUIButton': 'Classes/GeneralUIButton.html',
+            'GeneralUILabel': 'Classes/GeneralUILabel.html',
+            'GeneralUITextField': 'Classes/GeneralUITextField.html',
+            'GeneralUIViewController': 'Classes/GeneralUIViewController.html',
+            'EqualizerViewController': 'Classes/EqualizerViewController.html',
+            'UIButton': None  # UIButton is a system class, just keep as code
+        }
+
+        links_added = 0
+
+        # Find all abstract sections in the summary page
+        for abstract in soup.find_all('div', class_='abstract'):
+            for p in abstract.find_all('p'):
+                # Check if paragraph contains class names in backticks
+                text = p.get_text()
+                needs_update = False
+
+                for class_name in class_links.keys():
+                    if f'`{class_name}`' in text:
+                        needs_update = True
+                        break
+
+                if needs_update:
+                    # Rebuild paragraph with links
+                    p.clear()
+                    current_text = text
+
+                    # Process the text and replace backtick class names with links
+                    import re
+                    parts = re.split(r'`([^`]+)`', current_text)
+
+                    for i, part in enumerate(parts):
+                        if i % 2 == 0:
+                            # Regular text
+                            if part:
+                                p.append(part)
+                        else:
+                            # Text that was in backticks
+                            if part in class_links:
+                                if class_links[part]:
+                                    # Create link
+                                    a = soup.new_tag('a', href=class_links[part])
+                                    code = soup.new_tag('code')
+                                    code.string = part
+                                    a.append(code)
+                                    p.append(a)
+                                    links_added += 1
+                                else:
+                                    # Just code, no link (system classes)
+                                    code = soup.new_tag('code')
+                                    code.string = part
+                                    p.append(code)
+                            else:
+                                # Keep as code
+                                code = soup.new_tag('code')
+                                code.string = part
+                                p.append(code)
+
+        # Write back if changes were made
+        if links_added > 0:
+            with open(html_file, 'w', encoding='utf-8') as f:
+                f.write(str(soup))
+
+        return links_added
+
     # Add missing declarations to summary pages
     def add_missing_declarations_to_summary(html_file: Path):
         """Add missing declaration sections for User and AppDelegate in Classes.html"""
@@ -628,6 +701,12 @@ def main():
                 added = add_missing_declarations_to_summary(summary_page)
                 if added > 0:
                     print(f"      Added {added} missing declarations")
+
+            # Add class links in Extensions.html
+            if summary_page.name == 'Extensions.html':
+                links_added = add_class_links_to_extensions(summary_page)
+                if links_added > 0:
+                    print(f"      Added {links_added} class reference links")
 
             # Merge all inline docs for this summary page
             merged_docs = {}
