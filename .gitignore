@@ -91,7 +91,7 @@ iOSInjectionProject/
 
 ## Jazzy documentation
 # Generated documentation (built by GitHub Actions, only exists in gh-pages branch)
-docs/
+# docs/  # Commented out - docs folder is now committed to repo
 
 # SPM (Swift Package Manager)
 .swiftpm/
