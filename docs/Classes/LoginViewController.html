@@ -1,548 +1,588 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head>
-<title>LoginViewController Class Reference</title>
-<link href="../css/jazzy.css" rel="stylesheet" type="text/css"/>
-<link href="../css/highlight.css" rel="stylesheet" type="text/css"/>
-<meta charset="utf-8"/>
-<script defer="" src="../js/jquery.min.js"></script>
-<script defer="" src="../js/jazzy.js"></script>
-<script defer="" src="../js/lunr.min.js"></script>
-<script defer="" src="../js/typeahead.jquery.js"></script>
-<script defer="" src="../js/jazzy.search.js"></script>
-</head>
-<body>
-<a class="dashAnchor" name="//apple_ref/swift/Class/LoginViewController"></a>
-<a title="LoginViewController Class Reference"></a>
-<header class="header">
-<p class="header-col header-col--primary">
-<a class="header-link" href="../index.html">
+  <head>
+    <title>LoginViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/LoginViewController" class="dashAnchor"></a>
+
+    <a title="LoginViewController Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
            Docs
         </a>
          (88% documented)
       </p>
-<p class="header-col--secondary">
-<form action="../search.json" role="search">
-<input data-typeahead="" placeholder="Search documentation" type="text"/>
-</form>
-</p>
-<p class="header-col header-col--secondary">
-<a class="header-link" href="https://github.com/kvnloo/PhaseIWireframe">
-<img class="header-icon" src="../img/gh.png"/>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/kvnloo/PhaseIWireframe">
+            <img class="header-icon" src="../img/gh.png"/>
             View on GitHub
           </a>
-</p>
-</header>
-<p class="breadcrumbs">
-<a class="breadcrumb" href="../index.html"> Reference</a>
-<img class="carat" src="../img/carat.png"/>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html"> Reference</a>
+      <img class="carat" src="../img/carat.png" />
       LoginViewController Class Reference
     </p>
-<div class="content-wrapper">
-<nav class="navigation">
-<ul class="nav-groups">
-<li class="nav-group-name">
-<a class="nav-group-name-link" href="../Classes.html">Classes</a>
-<ul class="nav-group-tasks">
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/APIManager.html">APIManager</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/AppDelegate.html">AppDelegate</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/Audio.html">Audio</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/CustomUITextField.html">CustomUITextField</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/EqualizerViewController.html">EqualizerViewController</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/GeneralUIButton.html">GeneralUIButton</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/GeneralUILabel.html">GeneralUILabel</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/GeneralUITableView.html">GeneralUITableView</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/GeneralUITextField.html">GeneralUITextField</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/InitialViewController.html">InitialViewController</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/LoginViewController.html">LoginViewController</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/RecorderViewController.html">RecorderViewController</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/SignUpViewController.html">SignUpViewController</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Classes/User.html">User</a>
-</li>
-</ul>
-</li>
-<li class="nav-group-name">
-<a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
-<ul class="nav-group-tasks">
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Extensions/UIFont.html">UIFont</a>
-</li>
-<li class="nav-group-task">
-<a class="nav-group-task-link" href="../Extensions/UINavigationBar.html">UINavigationBar</a>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-<article class="main-content">
-<section class="section">
-<div class="section-content">
-<h1>LoginViewController</h1>
-<div class="declaration">
-<div class="language">
-<pre class="highlight"><code><span class="kd">class</span> <span class="kt">LoginViewController</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></span><span class="p">,</span> <span class="kt">UITableViewDelegate</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span></code></pre>
-</div>
-</div>
-<p>This <code><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></code> controls the login view. It allows the user to login through Facebook, Google, E-mail, or Phone.</p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/APIManager.html">APIManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Audio.html">Audio</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CustomUITextField.html">CustomUITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/EqualizerViewController.html">EqualizerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUIButton.html">GeneralUIButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUILabel.html">GeneralUILabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUITableView.html">GeneralUITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUITextField.html">GeneralUITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/InitialViewController.html">InitialViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LoginViewController.html">LoginViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RecorderViewController.html">RecorderViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SignUpViewController.html">SignUpViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIFont.html">UIFont</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>LoginViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">LoginViewController</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></span><span class="p">,</span> <span class="kt">UITableViewDelegate</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span></code></pre>
+
+                </div>
+              </div>
+            <p>This <code><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></code> controls the login view. It allows the user to login through Facebook, Google, E-mail, or Phone.</p>
 <pre class="highlight plaintext"><code>TODO: configure firebase backend system. Create an api-manager to control https requests. input validation for email/phone number.
 </code></pre>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/IBOutlets"></a>
+                <a name="//apple_ref/swift/Section/IBOutlets" class="dashAnchor"></a>
+                <a href="#/IBOutlets">
+                  <h3 class="section-name">IBOutlets</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17Phase_1_Wireframe19LoginViewController9tableViewXwGSQCS_18GeneralUITableView_"></a>
+                    <a name="//apple_ref/swift/Property/tableView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17Phase_1_Wireframe19LoginViewController9tableViewXwGSQCS_18GeneralUITableView_">tableView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This table view sets up simple scrolling and reusable cells to simplify view layouts. This solution is more elegant than implementing a scroll view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUITableView.html">GeneralUITableView</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIViewController"></a>
+                <a name="//apple_ref/swift/Section/UIViewController" class="dashAnchor"></a>
+                <a href="#/UIViewController">
+                  <h3 class="section-name">UIViewController</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController11viewDidLoadFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController11viewDidLoadFT_T_">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Setup the view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UITableViewDataSource"></a>
+                <a name="//apple_ref/swift/Section/UITableViewDataSource" class="dashAnchor"></a>
+                <a href="#/UITableViewDataSource">
+                  <h3 class="section-name">UITableViewDataSource</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController16numberOfSectionsFT2inCSo11UITableView_Si"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSections(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController16numberOfSectionsFT2inCSo11UITableView_Si">numberOfSections(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the number of sections in this tableView.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView14heightForRowAtV10Foundation9IndexPath_V12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:heightForRowAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView14heightForRowAtV10Foundation9IndexPath_V12CoreGraphics7CGFloat">tableView(_:heightForRowAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the height of a given cell based on indexPath.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">heightForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView21numberOfRowsInSectionSi_Si"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:numberOfRowsInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView21numberOfRowsInSectionSi_Si">tableView(_:numberOfRowsInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the number of rows in this tableView.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView12cellForRowAtV10Foundation9IndexPath_CSo15UITableViewCell"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:cellForRowAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView12cellForRowAtV10Foundation9IndexPath_CSo15UITableViewCell">tableView(_:cellForRowAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the cell using a reusable identifier based on the indexPath.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UITableViewDelegate"></a>
+                <a name="//apple_ref/swift/Section/UITableViewDelegate" class="dashAnchor"></a>
+                <a href="#/UITableViewDelegate">
+                  <h3 class="section-name">UITableViewDelegate</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView14didSelectRowAtV10Foundation9IndexPath_T_"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:didSelectRowAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView14didSelectRowAtV10Foundation9IndexPath_T_">tableView(_:didSelectRowAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unselects a row after it is selected by the user. This tableview does not need selection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Helper%20Functions"></a>
+                <a name="//apple_ref/swift/Section/Helper Functions" class="dashAnchor"></a>
+                <a href="#/Helper%20Functions">
+                  <h3 class="section-name">Helper Functions</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController6getuidFT_GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/getuid()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController6getuidFT_GSqSS_">getuid()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the username that was typed in by the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getuid</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController5getpwFT_GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/getpw()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController5getpwFT_GSqSS_">getpw()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the password that was typed in by the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getpw</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController12userLoggedInFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/userLoggedIn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController12userLoggedInFT_T_">userLoggedIn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Once the user has logged in successfully, the <code>rootViewController</code> must be changed and a segue is taken to move the application to the demo page.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">userLoggedIn</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/IBAction"></a>
+                <a name="//apple_ref/swift/Section/IBAction" class="dashAnchor"></a>
+                <a href="#/IBAction">
+                  <h3 class="section-name">IBAction</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController20fbLoginButtonClickedFT6senderPs9AnyObject__T_"></a>
+                    <a name="//apple_ref/swift/Method/fbLoginButtonClicked(sender:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController20fbLoginButtonClickedFT6senderPs9AnyObject__T_">fbLoginButtonClicked(sender:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An action item for when the Facebook Login Button is clicked.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">fbLoginButtonClicked</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController24googleLoginButtonClickedFT6senderPs9AnyObject__T_"></a>
+                    <a name="//apple_ref/swift/Method/googleLoginButtonClicked(sender:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController24googleLoginButtonClickedFT6senderPs9AnyObject__T_">googleLoginButtonClicked(sender:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An action item for when the Google Login Button is clicked.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">googleLoginButtonClicked</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe19LoginViewController20loginWithCredentialsFP_T_"></a>
+                    <a name="//apple_ref/swift/Method/loginWithCredentials(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController20loginWithCredentialsFP_T_">loginWithCredentials(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This function takes the information provided in this view&rsquo;s <code><a href="../Classes/CustomUITextField.html">CustomUITextField</a></code> objects and sends the information to <code>Firebase</code> to attempt logging in. Any failure messages are shown to the user as a notification.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">loginWithCredentials</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2017 <a class="link" href="https://github.com/lesseradmin" target="_blank" rel="external">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
 </div>
-</section>
-<section class="section">
-<div class="section-content">
-<div class="task-group">
-<div class="task-name-container">
-<a name="/IBOutlets"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Section/IBOutlets"></a>
-<a href="#/IBOutlets">
-<h3 class="section-name">IBOutlets</h3>
-</a>
-</div>
-<ul class="item-container">
-<li class="item">
-<div>
-<code>
-<a name="/s:vC17Phase_1_Wireframe19LoginViewController9tableViewXwGSQCS_18GeneralUITableView_"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Property/tableView"></a>
-<a class="token" href="#/s:vC17Phase_1_Wireframe19LoginViewController9tableViewXwGSQCS_18GeneralUITableView_">tableView</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>This table view sets up simple scrolling and reusable cells to simplify view layouts. This solution is more elegant than implementing a scroll view.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUITableView.html">GeneralUITableView</a></span><span class="o">!</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-</ul>
-</div>
-<div class="task-group">
-<div class="task-name-container">
-<a name="/UIViewController"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Section/UIViewController"></a>
-<a href="#/UIViewController">
-<h3 class="section-name">UIViewController</h3>
-</a>
-</div>
-<ul class="item-container">
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController11viewDidLoadFT_T_"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/viewDidLoad()"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController11viewDidLoadFT_T_">viewDidLoad()</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>Setup the view.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-</ul>
-</div>
-<div class="task-group">
-<div class="task-name-container">
-<a name="/UITableViewDataSource"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Section/UITableViewDataSource"></a>
-<a href="#/UITableViewDataSource">
-<h3 class="section-name">UITableViewDataSource</h3>
-</a>
-</div>
-<ul class="item-container">
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController16numberOfSectionsFT2inCSo11UITableView_Si"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/numberOfSections(in:)"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController16numberOfSectionsFT2inCSo11UITableView_Si">numberOfSections(in:)</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>Returns the number of sections in this tableView.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView14heightForRowAtV10Foundation9IndexPath_V12CoreGraphics7CGFloat"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/tableView(_:heightForRowAt:)"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView14heightForRowAtV10Foundation9IndexPath_V12CoreGraphics7CGFloat">tableView(_:heightForRowAt:)</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>Returns the height of a given cell based on indexPath.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">heightForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView21numberOfRowsInSectionSi_Si"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/tableView(_:numberOfRowsInSection:)"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView21numberOfRowsInSectionSi_Si">tableView(_:numberOfRowsInSection:)</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>Returns the number of rows in this tableView.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView12cellForRowAtV10Foundation9IndexPath_CSo15UITableViewCell"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/tableView(_:cellForRowAt:)"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView12cellForRowAtV10Foundation9IndexPath_CSo15UITableViewCell">tableView(_:cellForRowAt:)</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>Returns the cell using a reusable identifier based on the indexPath.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-</ul>
-</div>
-<div class="task-group">
-<div class="task-name-container">
-<a name="/UITableViewDelegate"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Section/UITableViewDelegate"></a>
-<a href="#/UITableViewDelegate">
-<h3 class="section-name">UITableViewDelegate</h3>
-</a>
-</div>
-<ul class="item-container">
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView14didSelectRowAtV10Foundation9IndexPath_T_"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/tableView(_:didSelectRowAt:)"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController9tableViewFTCSo11UITableView14didSelectRowAtV10Foundation9IndexPath_T_">tableView(_:didSelectRowAt:)</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>Unselects a row after it is selected by the user. This tableview does not need selection.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-</ul>
-</div>
-<div class="task-group">
-<div class="task-name-container">
-<a name="/Helper%20Functions"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Section/Helper Functions"></a>
-<a href="#/Helper%20Functions">
-<h3 class="section-name">Helper Functions</h3>
-</a>
-</div>
-<ul class="item-container">
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController6getuidFT_GSqSS_"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/getuid()"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController6getuidFT_GSqSS_">getuid()</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>Returns the username that was typed in by the user.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">func</span> <span class="nf">getuid</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController5getpwFT_GSqSS_"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/getpw()"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController5getpwFT_GSqSS_">getpw()</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>Returns the password that was typed in by the user.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">func</span> <span class="nf">getpw</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController12userLoggedInFT_T_"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/userLoggedIn()"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController12userLoggedInFT_T_">userLoggedIn()</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>Once the user has logged in successfully, the <code>rootViewController</code> must be changed and a segue is taken to move the application to the demo page.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">func</span> <span class="nf">userLoggedIn</span><span class="p">()</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-</ul>
-</div>
-<div class="task-group">
-<div class="task-name-container">
-<a name="/IBAction"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Section/IBAction"></a>
-<a href="#/IBAction">
-<h3 class="section-name">IBAction</h3>
-</a>
-</div>
-<ul class="item-container">
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController20fbLoginButtonClickedFT6senderPs9AnyObject__T_"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/fbLoginButtonClicked(sender:)"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController20fbLoginButtonClickedFT6senderPs9AnyObject__T_">fbLoginButtonClicked(sender:)</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>An action item for when the Facebook Login Button is clicked.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">fbLoginButtonClicked</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController24googleLoginButtonClickedFT6senderPs9AnyObject__T_"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/googleLoginButtonClicked(sender:)"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController24googleLoginButtonClickedFT6senderPs9AnyObject__T_">googleLoginButtonClicked(sender:)</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>An action item for when the Google Login Button is clicked.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">googleLoginButtonClicked</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-<li class="item">
-<div>
-<code>
-<a name="/s:FC17Phase_1_Wireframe19LoginViewController20loginWithCredentialsFP_T_"></a>
-<a class="dashAnchor" name="//apple_ref/swift/Method/loginWithCredentials(_:)"></a>
-<a class="token" href="#/s:FC17Phase_1_Wireframe19LoginViewController20loginWithCredentialsFP_T_">loginWithCredentials(_:)</a>
-</code>
-</div>
-<div class="height-container">
-<div class="pointer-container"></div>
-<section class="section">
-<div class="pointer"></div>
-<div class="abstract">
-<p>This function takes the information provided in this view’s <code><a href="../Classes/CustomUITextField.html">CustomUITextField</a></code> objects and sends the information to <code>Firebase</code> to attempt logging in. Any failure messages are shown to the user as a notification.</p>
-</div>
-<div class="declaration">
-<h4>Declaration</h4>
-<div class="language">
-<p class="aside-title">Swift</p>
-<pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">loginWithCredentials</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span></code></pre>
-</div>
-</div>
-</section>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</section>
-</article>
-</div>
-<section class="footer">
-<p>© 2017 <a class="link" href="https://github.com/lesseradmin" rel="external" target="_blank">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
-<p>Generated by <a class="link" href="https://github.com/realm/jazzy" rel="external" target="_blank">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" rel="external" target="_blank">Realm</a> project.</p>
-</section>
-</body>
 </html>
