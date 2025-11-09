@@ -18,7 +18,7 @@
 
 ### 3. Repository URLs
 - **Problem**: All GitHub links pointed to wrong repository name (`PhaseIProject` instead of `PhaseIWireframe`)
-- **Solution**: Updated all repository URLs to use correct format: `https://github.com/kvnloo/PhaseIWireframe`
+- **Solution**: Updated all repository URLs to use correct format: `https://github.com/kvnloo/AudioEngine`
 
 ### 4. Jazzy Configuration
 - **Problem**: No Jazzy configuration file existed
@@ -72,5 +72,5 @@ jazzy --config .jazzy.yaml
 ## Notes
 
 - The documentation is set to be hosted at: https://kvnloo.github.io/PhaseIWireframe/
-- Documentation coverage shows 88% documented
+- Documentation coverage shows 100% documented
 - The project uses Swift 3.0 and iOS 10.0+
