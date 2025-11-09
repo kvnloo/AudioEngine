@@ -1,0 +1,93 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:  # Allow manual trigger
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for all branches
+
+      - name: Install dependencies
+        run: |
+          echo "Installing Python dependencies..."
+          python3 -m venv .venv
+          source .venv/bin/activate
+          pip install beautifulsoup4 lxml
+
+      - name: Copy pre-built documentation from dev branch
+        run: |
+          echo "📚 Copying documentation from dev branch..."
+          git fetch origin dev
+          git checkout origin/dev -- docs/
+          echo "✅ Documentation copied successfully"
+
+      - name: Replace Undocumented placeholders
+        run: |
+          echo "💉 Replacing Undocumented text with inline Swift documentation..."
+          source .venv/bin/activate
+          chmod +x scripts/replace-undocumented.py
+          python3 scripts/replace-undocumented.py
+          echo "✅ Undocumented placeholders replaced successfully"
+
+      - name: Copy image assets to documentation
+        run: |
+          echo "Copying image assets to documentation..."
+          mkdir -p docs/assets/images
+          cp -f "Assets/header-image/header@3x.png" docs/assets/images/header.png || echo "Header image not found"
+          cp -f "Assets/Color Palettes/Color Palette Final/ColorPalette.png" docs/assets/images/color-palette.png || echo "Color palette image not found"
+          cp -f "Assets/UIComponents/UIComponents@3x.png" docs/assets/images/ui-components.png || echo "UI components image not found"
+          echo "✅ Image assets copied successfully"
+
+      - name: Verify documentation output
+        run: |
+          echo "Checking documentation files..."
+          ls -la docs/
+          if [ ! -f "docs/index.html" ]; then
+            echo "❌ ERROR: index.html not found in docs directory!"
+            exit 1
+          fi
+          echo "✅ Documentation files verified successfully"
+
+      - name: Add .nojekyll file
+        run: |
+          touch docs/.nojekyll
+          echo "✅ Added .nojekyll to prevent Jekyll processing"
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy documentation with inline Swift doc comments'
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Documentation deployed successfully!"
+          echo "📚 Documentation URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          echo ""
+          echo "Note: Documentation uses pre-built HTML from dev branch"
+          echo "Enhanced with inline documentation from Swift file comments"

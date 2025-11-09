@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>AppDelegate Class Reference</title>
+<link href="../css/jazzy.css" rel="stylesheet" type="text/css"/>
+<link href="../css/highlight.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<script defer="" src="../js/jquery.min.js"></script>
+<script defer="" src="../js/jazzy.js"></script>
+<script defer="" src="../js/lunr.min.js"></script>
+<script defer="" src="../js/typeahead.jquery.js"></script>
+<script defer="" src="../js/jazzy.search.js"></script>
+</head>
+<body>
+<a class="dashAnchor" name="//apple_ref/swift/Class/AppDelegate"></a>
+<a title="AppDelegate Class Reference"></a>
+<header class="header">
+<p class="header-col header-col--primary">
+<a class="header-link" href="../index.html">
+           Docs
+        </a>
+         (88% documented)
+      </p>
+<p class="header-col--secondary">
+<form action="../search.json" role="search">
+<input data-typeahead="" placeholder="Search documentation" type="text"/>
+</form>
+</p>
+<p class="header-col header-col--secondary">
+<a class="header-link" href="https://github.com/kvnloo/PhaseIWireframe">
+<img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+</p>
+</header>
+<p class="breadcrumbs">
+<a class="breadcrumb" href="../index.html"> Reference</a>
+<img class="carat" src="../img/carat.png"/>
+      AppDelegate Class Reference
+    </p>
+<div class="content-wrapper">
+<nav class="navigation">
+<ul class="nav-groups">
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Classes.html">Classes</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/APIManager.html">APIManager</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/AppDelegate.html">AppDelegate</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/Audio.html">Audio</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/CustomUITextField.html">CustomUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerViewController.html">EqualizerViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIButton.html">GeneralUIButton</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUILabel.html">GeneralUILabel</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableView.html">GeneralUITableView</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITextField.html">GeneralUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/InitialViewController.html">InitialViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/LoginViewController.html">LoginViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecorderViewController.html">RecorderViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpViewController.html">SignUpViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/User.html">User</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIFont.html">UIFont</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<article class="main-content">
+<section class="section">
+<div class="section-content">
+<h1>AppDelegate</h1>
+<p>This file handles special UIApplication states including the following: applicationDidFinishLaunching: - handles on-startup configuration and construction applicationWillTerminate: - handles clean up at the end, when the application terminates Extraneous functionality should NOT be placed in the AppDelegate since they don't really belong there. This includes the following: Document data -- this should be placed in a document manager singleton Button/table/view controllers, view delegate methods or other view handling (top-level view in applicationDidFinishLaunching: is still allowed) -- this work should be in respective view controller classes.</p>
+</div>
+</section>
+<section class="section">
+<div class="section-content">
+<div class="task-group">
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe11AppDelegate6windowGSqCSo8UIWindow_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/window"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe11AppDelegate6windowGSqCSo8UIWindow_">window</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The AppDelegate window. This variable contains information regarding the placment of the Application itself on the phone screen. The rootViewController for this variable will be the <code><a href="../Classes/InitialViewController.html">InitialViewController</a></code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe11AppDelegate11applicationFTCSo13UIApplication29didFinishLaunchingWithOptionsGSqGVs10DictionaryVSC29UIApplicationLaunchOptionsKeyP____Sb"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/application(_:didFinishLaunchingWithOptions:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe11AppDelegate11applicationFTCSo13UIApplication29didFinishLaunchingWithOptionsGSqGVs10DictionaryVSC29UIApplicationLaunchOptionsKeyP____Sb">application(_:didFinishLaunchingWithOptions:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The Navigation Bar’s appearance is set in this function. Since the entire application will be using the same Navigation bar, setting it here will affect all other views. Most of the backend is also configured in this function (Firebase, Google SDK, Facebook SDK).</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe11AppDelegate11applicationFTCSo13UIApplication4openV10Foundation3URL17sourceApplicationGSqSS_10annotationP__Sb"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/application(_:open:sourceApplication:annotation:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe11AppDelegate11applicationFTCSo13UIApplication4openV10Foundation3URL17sourceApplicationGSqSS_10annotationP__Sb">application(_:open:sourceApplication:annotation:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This function is called when this application opens an URL. It returns true if the URL has handled by either Google SDK or Facebook SDK and returns when the user finishes logging in. This allows the Safari view to close once the user has signed in.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">open</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">annotation</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe11AppDelegate21switchViewControllersFT14viewControllerCSo16UIViewController_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/switchViewControllers(viewController:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe11AppDelegate21switchViewControllersFT14viewControllerCSo16UIViewController_T_">switchViewControllers(viewController:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Switches the application's root view controller to enable navigation between authentication and main app views.  This method is used to transition between different application states, such as: - Presenting the initial login/signup screen after logout - Navigating to the demo/equalizer screen after successful authentication - Restoring the demo screen if a user session exists on app launch  The transition is performed by directly replacing the window's `rootViewController`, which provides an instant switch without animation.  - Parameter viewController: The new view controller to set as the window's root  - Note: Called in response to `NotificationCenter` notifications from `APIManager` - SeeAlso: `APIManager.initialNotification` and `APIManager.demoNotification`</p>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe11AppDelegate27applicationWillResignActiveFCSo13UIApplicationT_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/applicationWillResignActive(_:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe11AppDelegate27applicationWillResignActiveFCSo13UIApplicationT_">applicationWillResignActive(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state. Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.</p>
+<pre class="highlight plaintext"><code>- note: This function is not customized.
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe11AppDelegate29applicationDidEnterBackgroundFCSo13UIApplicationT_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/applicationDidEnterBackground(_:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe11AppDelegate29applicationDidEnterBackgroundFCSo13UIApplicationT_">applicationDidEnterBackground(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.</p>
+<pre class="highlight plaintext"><code>- note: This function is not customized.
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">applicationDidEnterBackground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe11AppDelegate30applicationWillEnterForegroundFCSo13UIApplicationT_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/applicationWillEnterForeground(_:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe11AppDelegate30applicationWillEnterForegroundFCSo13UIApplicationT_">applicationWillEnterForeground(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.</p>
+<div class="aside aside-note">
+<p class="aside-title">Note</p>
+    This function is not customized.
+
+</div>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">applicationWillEnterForeground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe11AppDelegate26applicationDidBecomeActiveFCSo13UIApplicationT_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/applicationDidBecomeActive(_:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe11AppDelegate26applicationDidBecomeActiveFCSo13UIApplicationT_">applicationDidBecomeActive(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.</p>
+<div class="aside aside-note">
+<p class="aside-title">Note</p>
+    This function is customized for the Facebook SDK.
+
+</div>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</article>
+</div>
+<section class="footer">
+<p>© 2017 <a class="link" href="https://github.com/lesseradmin" rel="external" target="_blank">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" rel="external" target="_blank">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" rel="external" target="_blank">Realm</a> project.</p>
+</section>
+</body>
+</html>

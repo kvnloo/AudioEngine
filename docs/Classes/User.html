@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>User Class Reference</title>
+<link href="../css/jazzy.css" rel="stylesheet" type="text/css"/>
+<link href="../css/highlight.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<script defer="" src="../js/jquery.min.js"></script>
+<script defer="" src="../js/jazzy.js"></script>
+<script defer="" src="../js/lunr.min.js"></script>
+<script defer="" src="../js/typeahead.jquery.js"></script>
+<script defer="" src="../js/jazzy.search.js"></script>
+</head>
+<body>
+<a class="dashAnchor" name="//apple_ref/swift/Class/User"></a>
+<a title="User Class Reference"></a>
+<header class="header">
+<p class="header-col header-col--primary">
+<a class="header-link" href="../index.html">
+           Docs
+        </a>
+         (88% documented)
+      </p>
+<p class="header-col--secondary">
+<form action="../search.json" role="search">
+<input data-typeahead="" placeholder="Search documentation" type="text"/>
+</form>
+</p>
+<p class="header-col header-col--secondary">
+<a class="header-link" href="https://github.com/kvnloo/PhaseIWireframe">
+<img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+</p>
+</header>
+<p class="breadcrumbs">
+<a class="breadcrumb" href="../index.html"> Reference</a>
+<img class="carat" src="../img/carat.png"/>
+      User Class Reference
+    </p>
+<div class="content-wrapper">
+<nav class="navigation">
+<ul class="nav-groups">
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Classes.html">Classes</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/APIManager.html">APIManager</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/AppDelegate.html">AppDelegate</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/Audio.html">Audio</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/CustomUITextField.html">CustomUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerViewController.html">EqualizerViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIButton.html">GeneralUIButton</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUILabel.html">GeneralUILabel</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableView.html">GeneralUITableView</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITextField.html">GeneralUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/InitialViewController.html">InitialViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/LoginViewController.html">LoginViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecorderViewController.html">RecorderViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpViewController.html">SignUpViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/User.html">User</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIFont.html">UIFont</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<article class="main-content">
+<section class="section">
+<div class="section-content">
+<h1>User</h1>
+<p>Represents a user account within the JubiAudio application with authentication and data storage capabilities.  The User model supports multiple authentication methods and stores audio equalizer settings for persistence across sessions. User data is synchronized with Firebase Realtime Database to provide cross-device consistency.  ## Authentication Methods - **Email/Password**: Traditional Firebase authentication with username and password - **Social OAuth**: Facebook and Google Sign-In via access tokens  ## Data Storage User equalizer settings (28 float values representing 14-band dual-channel EQ) are stored in the `data` property and persisted to Firebase using a hash of the user's email as the key.  - Note: At least one authentication method must be used (uid/pw OR token) - Important: The data array contains 28 float values: 14 bands × 2 channels (left/right) - SeeAlso: `APIManager` for authentication flow and data synchronization</p>
+</div>
+</section>
+<section class="section">
+<div class="section-content">
+<div class="task-group">
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe4User3uidGSqSS_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/uid"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe4User3uidGSqSS_">uid</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The username for a given user.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">uid</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe4User2pwGSqSS_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/pw"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe4User2pwGSqSS_">pw</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The password for a given user.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">pw</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe4User5tokenGSqSS_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/token"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe4User5tokenGSqSS_">token</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The token if using AUTH.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe4User4dataGSqGSaSf__"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/data"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe4User4dataGSqGSaSf__">data</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The data to be stored in the server.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">Float</span><span class="p">]?</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe4User5emailGSqSb_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/email"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe4User5emailGSqSb_">email</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Determines if the user signed in with an email or a phone number</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe4UsercFT3uidGSqSS_2pwSS5emailGSqSb__S0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/init(uid:pw:email:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe4UsercFT3uidGSqSS_2pwSS5emailGSqSb__S0_">init(uid:pw:email:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Initializer for the user object with a username, password, and a Boolean describing if using an email or phonenumber.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">uid</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">pw</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe4UsercFT5tokenGSqSS__S0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/init(token:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe4UsercFT5tokenGSqSS__S0_">init(token:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Initializes user with an API token that can be attained through social media login.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe4User7setDataFT4dataGSqGSaSf___T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/setData(data:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe4User7setDataFT4dataGSqGSaSf___T_">setData(data:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A function that sets the data object of the user.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">setData</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">Float</span><span class="p">]?)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</article>
+</div>
+<section class="footer">
+<p>© 2017 <a class="link" href="https://github.com/lesseradmin" rel="external" target="_blank">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" rel="external" target="_blank">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" rel="external" target="_blank">Realm</a> project.</p>
+</section>
+</body>
+</html>

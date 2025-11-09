@@ -1,0 +1,67 @@
+# Jazzy configuration file for PhaseIWireframe
+
+author: Kevin
+author_url: https://github.com/kvnloo
+github_url: https://github.com/kvnloo/PhaseIWireframe
+github_file_prefix: https://github.com/kvnloo/PhaseIWireframe/tree/master
+module: Phase_1_Wireframe
+root_url: https://kvnloo.github.io/PhaseIWireframe/
+readme: README_jazzy.md
+documentation: "guides/*.md"
+
+# Swift version - Commented out to use system default
+# swift_version: 3.0
+
+# Output directory
+output: docs
+clean: true
+# Preserve custom assets when cleaning
+exclude:
+  - assets/images
+
+# Documentation settings
+min_acl: internal
+skip_undocumented: false
+
+# Theme
+theme: fullwidth
+
+# Custom categories (if needed)
+custom_categories:
+  - name: Core Classes
+    children:
+    - APIManager
+    - AppDelegate
+    - Audio
+    - User
+
+  - name: View Controllers
+    children:
+    - InitialViewController
+    - LoginViewController
+    - SignUpViewController
+    - EqualizerViewController
+    - NoiseMeterViewController
+    - RecorderViewController
+    - EqualizerTabBarController
+
+  - name: UI Components
+    children:
+    - GeneralUIButton
+    - GeneralUILabel
+    - GeneralUITextField
+    - GeneralUITableView
+    - GeneralUITableViewCell
+    - GeneralUIViewController
+    - CustomUITextField
+
+  - name: Models
+    children:
+    - RecordedAudioObject
+    - SignUpTableViewCell
+    - EqualizerTableViewCell
+
+# Build settings - Parse source files directly without building
+# Use sourcekitten to parse Swift files without compilation
+source_directory: Phase 1 Wireframe
+objc: false

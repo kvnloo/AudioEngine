@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>CustomUITextField Class Reference</title>
+<link href="../css/jazzy.css" rel="stylesheet" type="text/css"/>
+<link href="../css/highlight.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<script defer="" src="../js/jquery.min.js"></script>
+<script defer="" src="../js/jazzy.js"></script>
+<script defer="" src="../js/lunr.min.js"></script>
+<script defer="" src="../js/typeahead.jquery.js"></script>
+<script defer="" src="../js/jazzy.search.js"></script>
+</head>
+<body>
+<a class="dashAnchor" name="//apple_ref/swift/Class/CustomUITextField"></a>
+<a title="CustomUITextField Class Reference"></a>
+<header class="header">
+<p class="header-col header-col--primary">
+<a class="header-link" href="../index.html">
+           Docs
+        </a>
+         (88% documented)
+      </p>
+<p class="header-col--secondary">
+<form action="../search.json" role="search">
+<input data-typeahead="" placeholder="Search documentation" type="text"/>
+</form>
+</p>
+<p class="header-col header-col--secondary">
+<a class="header-link" href="https://github.com/kvnloo/PhaseIWireframe">
+<img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+</p>
+</header>
+<p class="breadcrumbs">
+<a class="breadcrumb" href="../index.html"> Reference</a>
+<img class="carat" src="../img/carat.png"/>
+      CustomUITextField Class Reference
+    </p>
+<div class="content-wrapper">
+<nav class="navigation">
+<ul class="nav-groups">
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Classes.html">Classes</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/APIManager.html">APIManager</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/AppDelegate.html">AppDelegate</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/Audio.html">Audio</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/CustomUITextField.html">CustomUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerViewController.html">EqualizerViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIButton.html">GeneralUIButton</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUILabel.html">GeneralUILabel</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableView.html">GeneralUITableView</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITextField.html">GeneralUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/InitialViewController.html">InitialViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/LoginViewController.html">LoginViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecorderViewController.html">RecorderViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpViewController.html">SignUpViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/User.html">User</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIFont.html">UIFont</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<article class="main-content">
+<section class="section">
+<div class="section-content">
+<h1>CustomUITextField</h1>
+<div class="declaration">
+<div class="language">
+<pre class="highlight"><code><span class="kd">class</span> <span class="kt">CustomUITextField</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUITextField.html">GeneralUITextField</a></span></code></pre>
+</div>
+</div>
+<p>This class was designed to allow the programmer to insert an <code>imageView</code> on the left side of a <code><a href="../Classes/GeneralUITextField.html">GeneralUITextField</a></code></p>
+</div>
+</section>
+<section class="section">
+<div class="section-content">
+<div class="task-group">
+<div class="task-name-container">
+<a name="/IBInspectable"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/IBInspectable"></a>
+<a href="#/IBInspectable">
+<h3 class="section-name">IBInspectable</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe17CustomUITextField9leftImageGSqCSo7UIImage_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/leftImage"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe17CustomUITextField9leftImageGSqCSo7UIImage_">leftImage</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This variable is the leftImage itself. When it is set, or changed, it calles <code>updateView</code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">leftImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe17CustomUITextField11leftPaddingV12CoreGraphics7CGFloat"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/leftPadding"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe17CustomUITextField11leftPaddingV12CoreGraphics7CGFloat">leftPadding</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This <code>CGFloat</code> represents the padding between the <code>UIImageView</code> and the text.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">leftPadding</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe17CustomUITextField10imageWidthV12CoreGraphics7CGFloat"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/imageWidth"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe17CustomUITextField10imageWidthV12CoreGraphics7CGFloat">imageWidth</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This <code>CGFloat</code> represents the width of the <code>UIImageView</code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">imageWidth</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">20</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe17CustomUITextField5colorCSo7UIColor"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/color"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe17CustomUITextField5colorCSo7UIColor">color</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Tint color for the <code>UIImageView</code>. When this is set, <code>updateView</code> is called.
+    note - in order for the image to visually change tintColor, it’s <q>Render as</q> property in Assets.xcassets must be set to <q>Template Image</q>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="kt">WHITE</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/UITextField%20Methods"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/UITextField Methods"></a>
+<a href="#/UITextField%20Methods">
+<h3 class="section-name">UITextField Methods</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe17CustomUITextField12leftViewRectFT9forBoundsVSC6CGRect_S1_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/leftViewRect(forBounds:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe17CustomUITextField12leftViewRectFT9forBoundsVSC6CGRect_S1_">leftViewRect(forBounds:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This function moves the textField x-origin component of UITextField by <code><a href="../Classes/CustomUITextField.html#/s:vC17Phase_1_Wireframe17CustomUITextField11leftPaddingV12CoreGraphics7CGFloat">leftPadding</a></code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">leftViewRect</span><span class="p">(</span><span class="n">forBounds</span> <span class="nv">bounds</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe17CustomUITextField12awakeFromNibFT_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/awakeFromNib()"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe17CustomUITextField12awakeFromNibFT_T_">awakeFromNib()</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This method is overridden to set <code>leftViewMode</code> to <code>UITextFieldViewMode.always</code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">awakeFromNib</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe17CustomUITextField10updateViewFT_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/updateView()"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe17CustomUITextField10updateViewFT_T_">updateView()</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This function updates all of the views within the <code>UITextField</code> object. It creates insets for the UIImage provided in <code><a href="../Classes/CustomUITextField.html#/s:vC17Phase_1_Wireframe17CustomUITextField9leftImageGSqCSo7UIImage_">leftImage</a></code> then sets the imageView as well as it’s properties such as the <code>tintColor</code> and <code>contentMode</code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">updateView</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</article>
+</div>
+<section class="footer">
+<p>© 2017 <a class="link" href="https://github.com/lesseradmin" rel="external" target="_blank">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" rel="external" target="_blank">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" rel="external" target="_blank">Realm</a> project.</p>
+</section>
+</body>
+</html>

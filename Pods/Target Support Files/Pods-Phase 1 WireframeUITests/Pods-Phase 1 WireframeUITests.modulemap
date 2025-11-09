@@ -1,0 +1,6 @@
+framework module Pods_Phase_1_WireframeUITests {
+  umbrella header "Pods-Phase 1 WireframeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
