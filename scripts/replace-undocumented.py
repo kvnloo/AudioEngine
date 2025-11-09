@@ -522,6 +522,9 @@ def main():
 
     print("🔍 Extracting inline documentation from Swift files...")
 
+    # Collect all inline docs from all Swift files
+    all_inline_docs = {}
+
     # Process each Swift file
     for swift_file in swift_dir.glob('*.swift'):
         file_stem = swift_file.stem
@@ -551,11 +554,34 @@ def main():
 
         print(f"      Found {len(inline_docs)} documented items")
 
+        # Store for summary pages
+        all_inline_docs[class_name] = inline_docs
+
         # Replace "Undocumented" in HTML
         replaced = replace_undocumented_in_html(html_file, inline_docs)
         print(f"      Replaced {replaced} 'Undocumented' instances in HTML")
 
-    print("✅ Documentation replacement complete!")
+    # Process summary pages (Classes.html and Extensions.html)
+    print("\n🔍 Processing summary pages...")
+
+    summary_pages = [
+        Path('docs/Classes.html'),
+        Path('docs/Extensions.html')
+    ]
+
+    for summary_page in summary_pages:
+        if summary_page.exists():
+            print(f"  📝 Processing {summary_page.name}...")
+
+            # Merge all inline docs for this summary page
+            merged_docs = {}
+            for class_docs in all_inline_docs.values():
+                merged_docs.update(class_docs)
+
+            replaced = replace_undocumented_in_html(summary_page, merged_docs)
+            print(f"      Replaced {replaced} 'Undocumented' instances in summary page")
+
+    print("\n✅ Documentation replacement complete!")
 
 if __name__ == '__main__':
     main()
