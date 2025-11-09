@@ -3,7 +3,6 @@ name: Build and Deploy Documentation
 on:
   push:
     branches:
-      - main
       - master
   workflow_dispatch:  # Allow manual trigger
 
@@ -35,11 +34,11 @@ jobs:
           source .venv/bin/activate
           pip install beautifulsoup4 lxml
 
-      - name: Copy pre-built documentation from gh-pages branch
+      - name: Copy pre-built documentation from dev branch
         run: |
-          echo "📚 Copying documentation from gh-pages branch..."
-          git fetch origin gh-pages
-          git checkout origin/gh-pages -- .
+          echo "📚 Copying documentation from dev branch..."
+          git fetch origin dev
+          git checkout origin/dev -- docs/
           echo "✅ Documentation copied successfully"
 
       - name: Replace Undocumented placeholders
