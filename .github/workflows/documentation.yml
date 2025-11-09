@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - main
   workflow_dispatch:  # Allow manual trigger
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -34,12 +35,14 @@ jobs:
           source .venv/bin/activate
           pip install beautifulsoup4 lxml
 
-      - name: Copy pre-built documentation from dev branch
+      - name: Use pre-built documentation from main branch
         run: |
-          echo "📚 Copying documentation from dev branch..."
-          git fetch origin dev
-          git checkout origin/dev -- docs/
-          echo "✅ Documentation copied successfully"
+          echo "📚 Using documentation from main branch..."
+          if [ ! -d "docs" ]; then
+            echo "❌ ERROR: docs directory not found!"
+            exit 1
+          fi
+          echo "✅ Documentation found successfully"
 
       - name: Replace Undocumented placeholders
         run: |
