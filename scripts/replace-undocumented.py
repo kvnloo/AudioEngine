@@ -564,6 +564,56 @@ def main():
     # Process summary pages (Classes.html and Extensions.html)
     print("\n🔍 Processing summary pages...")
 
+    # Add missing declarations to summary pages
+    def add_missing_declarations_to_summary(html_file: Path):
+        """Add missing declaration sections for User and AppDelegate in Classes.html"""
+        with open(html_file, 'r', encoding='utf-8') as f:
+            soup = BeautifulSoup(f.read(), 'html.parser')
+
+        # Dictionary of classes missing declarations with their declaration code
+        missing_declarations = {
+            'AppDelegate': '<span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span>',
+            'User': '<span class="kd">class</span> <span class="kt">User</span><span class="p">:</span> <span class="kt">NSObject</span>'
+        }
+
+        added_count = 0
+
+        for class_name, declaration_code in missing_declarations.items():
+            # Find the anchor for this class
+            anchor = soup.find('a', {'name': f'//apple_ref/swift/Class/{class_name}'})
+            if anchor:
+                # Find the parent section
+                section = anchor.find_parent('section', class_='section')
+                if section:
+                    # Check if declaration already exists
+                    if not section.find('div', class_='declaration'):
+                        # Find the abstract div to insert declaration after it
+                        abstract = section.find('div', class_='abstract')
+                        if abstract:
+                            # Create declaration HTML
+                            declaration_html = f'''<div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code>{declaration_code}</code></pre>
+
+                        </div>
+                      </div>'''
+
+                            # Parse and insert
+                            from bs4 import BeautifulSoup as BS
+                            decl_soup = BS(declaration_html, 'html.parser')
+                            abstract.insert_after(decl_soup)
+                            added_count += 1
+                            print(f"      Added declaration for {class_name}")
+
+        # Write back if changes were made
+        if added_count > 0:
+            with open(html_file, 'w', encoding='utf-8') as f:
+                f.write(str(soup))
+
+        return added_count
+
     summary_pages = [
         Path('docs/Classes.html'),
         Path('docs/Extensions.html')
@@ -572,6 +622,12 @@ def main():
     for summary_page in summary_pages:
         if summary_page.exists():
             print(f"  📝 Processing {summary_page.name}...")
+
+            # Add missing declarations
+            if summary_page.name == 'Classes.html':
+                added = add_missing_declarations_to_summary(summary_page)
+                if added > 0:
+                    print(f"      Added {added} missing declarations")
 
             # Merge all inline docs for this summary page
             merged_docs = {}
