@@ -604,8 +604,19 @@ def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
     with open(html_file, 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f.read(), 'html.parser')
 
-    # Find the section-content div
-    section_content = soup.find('div', class_='section-content')
+    # Find the main article section
+    article = soup.find('article', class_='main-content')
+    if not article:
+        print("  ⚠️  Could not find main-content article")
+        return
+
+    # Find the first section > div.section-content (the main content area)
+    section = article.find('section', class_='section')
+    if not section:
+        print("  ⚠️  Could not find section element")
+        return
+
+    section_content = section.find('div', class_='section-content')
     if not section_content:
         print("  ⚠️  Could not find section-content div")
         return
