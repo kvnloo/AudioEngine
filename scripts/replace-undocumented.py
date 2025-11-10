@@ -294,14 +294,31 @@ def replace_undocumented_in_html(html_file: Path, inline_docs: Dict[str, str]):
     if 'UINavigationBar' in str(html_file):
         section_content = soup.find('div', class_='section-content')
         if section_content:
-            # Find paragraphs with class references and convert to links
+            # Find the "Undocumented" paragraph and replace it
+            p_tag = section_content.find('p', string='Undocumented')
+            if p_tag:
+                # Replace with proper documentation
+                p_tag.clear()
+                p_tag.append('Extension created to allow the developer to modify the \'bottom border\' of the ')
+
+                code = soup.new_tag('code')
+                code.string = 'UINavigationBar'
+                p_tag.append(code)
+                p_tag.append('. This allows for the white highlight under the ')
+                code2 = soup.new_tag('code')
+                code2.string = 'UINavigationBar'
+                p_tag.append(code2)
+                p_tag.append('.')
+
+                replaced += 1
+
+            # Also check for paragraphs with 'GeneralUINavigationBar' text
             for p in section_content.find_all('p'):
                 if p.string and 'GeneralUINavigationBar' in p.string:
                     # Convert to proper links
                     p.clear()
                     p.append('Extension created to allow the developer to modify the \'bottom border\' of the ')
 
-                    # Link to GeneralUINavigationBar (which is actually this same page, so use self-reference)
                     code = soup.new_tag('code')
                     code.string = 'UINavigationBar'
                     p.append(code)
@@ -309,6 +326,7 @@ def replace_undocumented_in_html(html_file: Path, inline_docs: Dict[str, str]):
                     code2 = soup.new_tag('code')
                     code2.string = 'UINavigationBar'
                     p.append(code2)
+                    p.append('.')
 
     # Special handling for AppDelegate class - fix formatting and structure
     if 'AppDelegate' in str(html_file):
@@ -665,6 +683,35 @@ def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
                         a.string = name
                         li.append(a)
                         tasks_ul.append(li)
+
+        # Add Guides section at the end with Architecture and Technology Stack links
+        nav_groups = nav.find('ul', class_='nav-groups')
+        if nav_groups:
+            # Create Guides nav group (using "Guides" to avoid confusion with "Architecture" sub-item)
+            guides_nav_group = soup.new_tag('li', **{'class': 'nav-group-name'})
+            guides_group_link = soup.new_tag('a', **{'class': 'nav-group-name-link'}, href='../Architecture.html')
+            guides_group_link.string = 'Guides'
+            guides_nav_group.append(guides_group_link)
+
+            # Create tasks list for guide links
+            guides_tasks_ul = soup.new_tag('ul', **{'class': 'nav-group-tasks'})
+
+            # Add Architecture link
+            arch_li = soup.new_tag('li', **{'class': 'nav-group-task'})
+            arch_a = soup.new_tag('a', **{'class': 'nav-group-task-link'}, href='../Architecture.html')
+            arch_a.string = 'Architecture'
+            arch_li.append(arch_a)
+            guides_tasks_ul.append(arch_li)
+
+            # Add Technology Stack link
+            tech_li = soup.new_tag('li', **{'class': 'nav-group-task'})
+            tech_a = soup.new_tag('a', **{'class': 'nav-group-task-link'}, href='../TechnologyStack.html')
+            tech_a.string = 'Technology Stack'
+            tech_li.append(tech_a)
+            guides_tasks_ul.append(tech_li)
+
+            guides_nav_group.append(guides_tasks_ul)
+            nav_groups.append(guides_nav_group)
 
     # Write updated HTML
     with open(html_file, 'w', encoding='utf-8') as f:
