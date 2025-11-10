@@ -896,9 +896,12 @@ def update_all_pages_navigation():
     html_files.extend((docs_dir / 'Extensions').glob('*.html'))
 
     pages_updated = 0
+    print(f"  Found {len(html_files)} HTML files to process")
     for html_file in html_files:
+        print(f"  Processing: {html_file.name}")
         # Skip search.html and other special pages
         if html_file.name in ['search.html']:
+            print(f"    Skipped {html_file.name}")
             continue
 
         try:
