@@ -607,27 +607,33 @@ def convert_markdown_to_html(markdown_content: str) -> str:
             if not in_list:
                 html_lines.append('<ul>')
                 in_list = True
-            html_lines.append(f'<li>{line.strip()[2:]}</li>')
+            # Process markdown links in list items
+            list_content = line.strip()[2:]
+            list_content = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', list_content)
+            html_lines.append(f'<li>{list_content}</li>')
         # Handle ordered lists
         elif re.match(r'^\d+\.\s', line.strip()):
             if not in_list:
                 html_lines.append('<ol>')
                 in_list = True
-            html_lines.append(f'<li>{re.sub(r"^\d+\.\s", "", line.strip())}</li>')
+            # Process markdown links and formatting in ordered list items
+            list_content = re.sub(r"^\d+\.\s", "", line.strip())
+            list_content = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', list_content)
+            list_content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', list_content)
+            list_content = re.sub(r'`(.+?)`', r'<code>\1</code>', list_content)
+            html_lines.append(f'<li>{list_content}</li>')
         # Close list if needed
         elif in_list and line.strip() == '':
             html_lines.append('</ul>' if html_lines[-1].endswith('</li>') else '</ol>')
             in_list = False
-        # Handle bold text **text**
-        elif '**' in line:
-            line = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
-            html_lines.append(f'<p>{line}</p>')
-        # Handle inline code `code`
-        elif '`' in line:
-            line = re.sub(r'`(.+?)`', r'<code>\1</code>', line)
-            html_lines.append(f'<p>{line}</p>')
-        # Regular paragraphs
+        # Handle lines with markdown formatting (links, bold, code)
         elif line.strip():
+            # Process markdown links first
+            line = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', line)
+            # Process bold text
+            line = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
+            # Process inline code
+            line = re.sub(r'`(.+?)`', r'<code>\1</code>', line)
             html_lines.append(f'<p>{line}</p>')
         else:
             html_lines.append('')
@@ -712,10 +718,14 @@ def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
     for code_tag in section_content.find_all('code'):
         code_text = code_tag.get_text().strip()
 
+        # Strip optional/required markers and whitespace for matching
+        # e.g., "User?" -> "User", "Audio!" -> "Audio", "[User]" -> "User"
+        clean_text = re.sub(r'[?\!\[\]]', '', code_text).strip()
+
         # Check if this code reference matches a class or extension
-        if code_text in class_map:
+        if clean_text in class_map:
             # Wrap code tag with link
-            a_tag = soup.new_tag('a', href=class_map[code_text])
+            a_tag = soup.new_tag('a', href=class_map[clean_text])
             # Move code tag inside the link
             code_tag.wrap(a_tag)
             links_added += 1
