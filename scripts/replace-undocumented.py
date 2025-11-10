@@ -650,6 +650,7 @@ def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
         return
 
     print(f"  📝 Updating {html_file.name} from {md_file.name}...")
+    print(f"      Full path: {html_file.absolute()}")
 
     # Read markdown content
     with open(md_file, 'r', encoding='utf-8') as f:
@@ -784,6 +785,7 @@ def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
         f.write(str(soup))
 
     print(f"  ✅ {html_file.name} updated successfully")
+    print(f"      Wrote to: {html_file.absolute()}")
     print(f"      Added {len(class_links)} class links to navigation")
     print(f"      Added {len(extension_links)} extension links to navigation")
 
@@ -797,9 +799,11 @@ def update_architecture_page():
 
 def update_technology_stack_page():
     """Update TechnologyStack.html with content from TECHNOLOGY_STACK.md"""
+    html_path = Path('docs/TechnologyStack.html')
+    print(f"  🔍 Technology Stack target: {html_path.absolute()}")
     update_documentation_page(
         Path('TECHNOLOGY_STACK.md'),
-        Path('docs/TechnologyStack.html'),
+        html_path,
         'Technology Stack'
     )
 
