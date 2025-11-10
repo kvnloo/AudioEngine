@@ -108,7 +108,13 @@ def parse_swift_inline_docs(swift_file: Path) -> Dict[str, str]:
 
 def convert_backticks_to_code(text: str, soup) -> list:
     """Convert markdown-style backticks to HTML <code> tags.
-    Returns a list of strings and BeautifulSoup tags to append to a paragraph."""
+    Returns a list of strings and BeautifulSoup tags to append to a paragraph.
+
+    Also fixes GeneralUINavigationBar -> UINavigationBar in the documentation text.
+    """
+    # Fix GeneralUINavigationBar references to UINavigationBar
+    text = text.replace('GeneralUINavigationBar', 'UINavigationBar')
+
     parts = []
     current_text = ""
     in_code = False
@@ -870,7 +876,11 @@ def main():
 
     # Add links to class references in Extensions.html
     def add_class_links_to_extensions(html_file: Path):
-        """Convert class name references to proper links in Extensions.html"""
+        """Convert class name references to proper links in Extensions.html
+
+        This function works AFTER replace_undocumented_in_html has already converted
+        backticks to <code> tags, so it looks for <code> elements instead of backticks.
+        """
         with open(html_file, 'r', encoding='utf-8') as f:
             soup = BeautifulSoup(f.read(), 'html.parser')
 
@@ -889,50 +899,15 @@ def main():
         # Find all abstract sections in the summary page
         for abstract in soup.find_all('div', class_='abstract'):
             for p in abstract.find_all('p'):
-                # Check if paragraph contains class names in backticks
-                text = p.get_text()
-                needs_update = False
-
-                for class_name in class_links.keys():
-                    if f'`{class_name}`' in text:
-                        needs_update = True
-                        break
-
-                if needs_update:
-                    # Rebuild paragraph with links
-                    p.clear()
-                    current_text = text
-
-                    # Process the text and replace backtick class names with links
-                    import re
-                    parts = re.split(r'`([^`]+)`', current_text)
-
-                    for i, part in enumerate(parts):
-                        if i % 2 == 0:
-                            # Regular text
-                            if part:
-                                p.append(part)
-                        else:
-                            # Text that was in backticks
-                            if part in class_links:
-                                if class_links[part]:
-                                    # Create link
-                                    a = soup.new_tag('a', href=class_links[part])
-                                    code = soup.new_tag('code')
-                                    code.string = part
-                                    a.append(code)
-                                    p.append(a)
-                                    links_added += 1
-                                else:
-                                    # Just code, no link (system classes)
-                                    code = soup.new_tag('code')
-                                    code.string = part
-                                    p.append(code)
-                            else:
-                                # Keep as code
-                                code = soup.new_tag('code')
-                                code.string = part
-                                p.append(code)
+                # Find all <code> tags that contain class names
+                for code_tag in p.find_all('code'):
+                    class_name = code_tag.get_text()
+                    if class_name in class_links and class_links[class_name]:
+                        # Wrap the <code> tag in an <a> link
+                        a = soup.new_tag('a', href=class_links[class_name])
+                        # Replace the code tag with link containing code tag
+                        code_tag.wrap(a)
+                        links_added += 1
 
         # Write back if changes were made
         if links_added > 0:
