@@ -1006,19 +1006,21 @@ def main():
                 if added > 0:
                     print(f"      Added {added} missing declarations")
 
-            # Add class links in Extensions.html
-            if summary_page.name == 'Extensions.html':
-                links_added = add_class_links_to_extensions(summary_page)
-                if links_added > 0:
-                    print(f"      Added {links_added} class reference links")
-
             # Merge all inline docs for this summary page
             merged_docs = {}
             for class_docs in all_inline_docs.values():
                 merged_docs.update(class_docs)
 
+            # Replace "Undocumented" FIRST, before adding class links
             replaced = replace_undocumented_in_html(summary_page, merged_docs)
             print(f"      Replaced {replaced} 'Undocumented' instances in summary page")
+
+            # Add class links in Extensions.html AFTER replacing undocumented
+            # This ensures the links are added to the already-processed documentation
+            if summary_page.name == 'Extensions.html':
+                links_added = add_class_links_to_extensions(summary_page)
+                if links_added > 0:
+                    print(f"      Added {links_added} class reference links")
 
     print("\n✅ Documentation replacement complete!")
 
