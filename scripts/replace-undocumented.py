@@ -885,47 +885,137 @@ def main():
     # Process summary pages (Classes.html and Extensions.html)
     print("\n🔍 Processing summary pages...")
 
-    # Add links to class references in Extensions.html
-    def add_class_links_to_extensions(html_file: Path):
-        """Convert class name references to proper links in Extensions.html
+def update_all_pages_navigation():
+    """Add Technical Documentation section to navigation on ALL HTML pages for consistency."""
+    docs_dir = Path('docs')
 
-        This function works AFTER replace_undocumented_in_html has already converted
-        backticks to <code> tags, so it looks for <code> elements instead of backticks.
-        """
-        with open(html_file, 'r', encoding='utf-8') as f:
-            soup = BeautifulSoup(f.read(), 'html.parser')
+    # Find all HTML files in docs, Classes, and Extensions directories
+    html_files = []
+    html_files.extend(docs_dir.glob('*.html'))
+    html_files.extend((docs_dir / 'Classes').glob('*.html'))
+    html_files.extend((docs_dir / 'Extensions').glob('*.html'))
 
-        # Dictionary of class names to link to
-        class_links = {
-            'GeneralUIButton': 'Classes/GeneralUIButton.html',
-            'GeneralUILabel': 'Classes/GeneralUILabel.html',
-            'GeneralUITextField': 'Classes/GeneralUITextField.html',
-            'GeneralUIViewController': 'Classes/GeneralUIViewController.html',
-            'EqualizerViewController': 'Classes/EqualizerViewController.html',
-            'UIButton': None  # UIButton is a system class, just keep as code
-        }
+    pages_updated = 0
+    for html_file in html_files:
+        # Skip search.html and other special pages
+        if html_file.name in ['search.html']:
+            continue
 
-        links_added = 0
+        try:
+            with open(html_file, 'r', encoding='utf-8') as f:
+                soup = BeautifulSoup(f.read(), 'html.parser')
 
-        # Find all abstract sections in the summary page
-        for abstract in soup.find_all('div', class_='abstract'):
-            for p in abstract.find_all('p'):
-                # Find all <code> tags that contain class names
-                for code_tag in p.find_all('code'):
-                    class_name = code_tag.get_text()
-                    if class_name in class_links and class_links[class_name]:
-                        # Wrap the <code> tag in an <a> link
-                        a = soup.new_tag('a', href=class_links[class_name])
-                        # Replace the code tag with link containing code tag
-                        code_tag.wrap(a)
-                        links_added += 1
+            nav = soup.find('nav', class_='navigation')
+            if not nav:
+                continue
 
-        # Write back if changes were made
-        if links_added > 0:
+            nav_groups = nav.find('ul', class_='nav-groups')
+            if not nav_groups:
+                continue
+
+            # Remove any existing "Architecture" nav group to avoid duplication
+            for nav_group in nav_groups.find_all('li', class_='nav-group-name'):
+                group_link = nav_group.find('a', class_='nav-group-name-link')
+                if group_link and 'Architecture' in group_link.get_text():
+                    nav_group.decompose()
+
+            # Check if Technical Documentation section already exists
+            guides_exists = False
+            for nav_group in nav_groups.find_all('li', class_='nav-group-name'):
+                group_link = nav_group.find('a', class_='nav-group-name-link')
+                if group_link and ('Guides' in group_link.get_text() or 'Technical Documentation' in group_link.get_text()):
+                    guides_exists = True
+                    break
+
+            if guides_exists:
+                continue  # Skip if already has Technical Documentation section
+
+            # Determine relative path to docs root based on file location
+            if html_file.parent.name == 'Classes' or html_file.parent.name == 'Extensions':
+                rel_prefix = '../'
+            else:
+                rel_prefix = ''
+
+            # Create Technical Documentation nav group
+            guides_nav_group = soup.new_tag('li', **{'class': 'nav-group-name'})
+            guides_group_link = soup.new_tag('a', **{'class': 'nav-group-name-link'},
+                                            href=f'{rel_prefix}Architecture.html')
+            guides_group_link.string = 'Technical Documentation'
+            guides_nav_group.append(guides_group_link)
+
+            # Create tasks list for guide links
+            guides_tasks_ul = soup.new_tag('ul', **{'class': 'nav-group-tasks'})
+
+            # Add Architecture link
+            arch_li = soup.new_tag('li', **{'class': 'nav-group-task'})
+            arch_a = soup.new_tag('a', **{'class': 'nav-group-task-link'},
+                                 href=f'{rel_prefix}Architecture.html')
+            arch_a.string = 'Architecture'
+            arch_li.append(arch_a)
+            guides_tasks_ul.append(arch_li)
+
+            # Add Technology Stack link
+            tech_li = soup.new_tag('li', **{'class': 'nav-group-task'})
+            tech_a = soup.new_tag('a', **{'class': 'nav-group-task-link'},
+                                 href=f'{rel_prefix}TechnologyStack.html')
+            tech_a.string = 'Technology Stack'
+            tech_li.append(tech_a)
+            guides_tasks_ul.append(tech_li)
+
+            guides_nav_group.append(guides_tasks_ul)
+            nav_groups.append(guides_nav_group)
+
+            # Write updated HTML
             with open(html_file, 'w', encoding='utf-8') as f:
                 f.write(str(soup))
 
-        return links_added
+            pages_updated += 1
+
+        except Exception as e:
+            print(f"  ⚠️  Error updating {html_file.name}: {e}")
+
+    print(f"  ✅ Updated navigation on {pages_updated} pages")
+
+def add_class_links_to_extensions(html_file: Path):
+    """Convert class name references to proper links in Extensions.html
+
+    This function works AFTER replace_undocumented_in_html has already converted
+    backticks to <code> tags, so it looks for <code> elements instead of backticks.
+    """
+    with open(html_file, 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f.read(), 'html.parser')
+
+    # Dictionary of class names to link to
+    class_links = {
+        'GeneralUIButton': 'Classes/GeneralUIButton.html',
+        'GeneralUILabel': 'Classes/GeneralUILabel.html',
+        'GeneralUITextField': 'Classes/GeneralUITextField.html',
+        'GeneralUIViewController': 'Classes/GeneralUIViewController.html',
+        'EqualizerViewController': 'Classes/EqualizerViewController.html',
+        'UIButton': None  # UIButton is a system class, just keep as code
+    }
+
+    links_added = 0
+
+    # Find all abstract sections in the summary page
+    for abstract in soup.find_all('div', class_='abstract'):
+        for p in abstract.find_all('p'):
+            # Find all <code> tags that contain class names
+            for code_tag in p.find_all('code'):
+                class_name = code_tag.get_text()
+                if class_name in class_links and class_links[class_name]:
+                    # Wrap the <code> tag in an <a> link
+                    a = soup.new_tag('a', href=class_links[class_name])
+                    # Replace the code tag with link containing code tag
+                    code_tag.wrap(a)
+                    links_added += 1
+
+    # Write back if changes were made
+    if links_added > 0:
+        with open(html_file, 'w', encoding='utf-8') as f:
+            f.write(str(soup))
+
+    return links_added
 
     # Add missing declarations to summary pages
     def add_missing_declarations_to_summary(html_file: Path):
@@ -1007,6 +1097,10 @@ def main():
                 links_added = add_class_links_to_extensions(summary_page)
                 if links_added > 0:
                     print(f"      Added {links_added} class reference links")
+
+    # Update navigation on ALL HTML pages to add Technical Documentation section
+    print("\n🔧 Adding Technical Documentation section to all pages...")
+    update_all_pages_navigation()
 
     print("\n✅ Documentation replacement complete!")
 
