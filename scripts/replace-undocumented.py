@@ -607,9 +607,11 @@ def convert_markdown_to_html(markdown_content: str) -> str:
             if not in_list:
                 html_lines.append('<ul>')
                 in_list = True
-            # Process markdown links in list items
+            # Process markdown links, bold, and code in list items
             list_content = line.strip()[2:]
             list_content = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', list_content)
+            list_content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', list_content)
+            list_content = re.sub(r'`(.+?)`', r'<code>\1</code>', list_content)
             html_lines.append(f'<li>{list_content}</li>')
         # Handle ordered lists
         elif re.match(r'^\d+\.\s', line.strip()):
@@ -691,7 +693,8 @@ def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
 
     # Parse and insert new content
     new_soup = BeautifulSoup(html_content, 'html.parser')
-    section_content.append(new_soup)
+    for element in new_soup:
+        section_content.append(element)
 
     # Collect all classes and extensions for linking and navigation
     classes_dir = Path('docs/Classes')
