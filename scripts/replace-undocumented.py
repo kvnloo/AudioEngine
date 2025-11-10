@@ -1103,7 +1103,12 @@ def add_class_links_to_extensions(html_file: Path):
 
     # Update navigation on ALL HTML pages to add Technical Documentation section
     print("\n🔧 Adding Technical Documentation section to all pages...")
-    update_all_pages_navigation()
+    try:
+        update_all_pages_navigation()
+    except Exception as e:
+        print(f"❌ ERROR in update_all_pages_navigation: {e}")
+        import traceback
+        traceback.print_exc()
 
     print("\n✅ Documentation replacement complete!")
 
