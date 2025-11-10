@@ -565,27 +565,25 @@ def convert_markdown_to_html(markdown_content: str) -> str:
 
     return '\n'.join(html_lines)
 
-def update_architecture_page():
-    """Update Architecture.html with content from ARCHITECTURE.md"""
-    arch_md = Path('ARCHITECTURE.md')
-    arch_html = Path('docs/Architecture.html')
+def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
+    """Update documentation HTML page with content from markdown file"""
 
-    if not arch_md.exists():
-        print(f"  ⚠️  ARCHITECTURE.md not found, skipping...")
+    if not md_file.exists():
+        print(f"  ⚠️  {md_file} not found, skipping...")
         return
 
-    if not arch_html.exists():
-        print(f"  ⚠️  docs/Architecture.html not found, skipping...")
+    if not html_file.exists():
+        print(f"  ⚠️  {html_file} not found, skipping...")
         return
 
-    print("  📝 Updating Architecture.html from ARCHITECTURE.md...")
+    print(f"  📝 Updating {html_file.name} from {md_file.name}...")
 
     # Read markdown content
-    with open(arch_md, 'r', encoding='utf-8') as f:
+    with open(md_file, 'r', encoding='utf-8') as f:
         md_content = f.read()
 
     # Parse HTML
-    with open(arch_html, 'r', encoding='utf-8') as f:
+    with open(html_file, 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f.read(), 'html.parser')
 
     # Find the section-content div
@@ -669,12 +667,28 @@ def update_architecture_page():
                         tasks_ul.append(li)
 
     # Write updated HTML
-    with open(arch_html, 'w', encoding='utf-8') as f:
+    with open(html_file, 'w', encoding='utf-8') as f:
         f.write(str(soup))
 
-    print("  ✅ Architecture.html updated successfully")
-    print(f"      Added {len(class_links)} class links")
-    print(f"      Added {len(extension_links)} extension links")
+    print(f"  ✅ {html_file.name} updated successfully")
+    print(f"      Added {len(class_links)} class links to navigation")
+    print(f"      Added {len(extension_links)} extension links to navigation")
+
+def update_architecture_page():
+    """Update Architecture.html with content from ARCHITECTURE.md"""
+    update_documentation_page(
+        Path('ARCHITECTURE.md'),
+        Path('docs/Architecture.html'),
+        'Architecture Documentation'
+    )
+
+def update_technology_stack_page():
+    """Update TechnologyStack.html with content from TECHNOLOGY_STACK.md"""
+    update_documentation_page(
+        Path('TECHNOLOGY_STACK.md'),
+        Path('docs/TechnologyStack.html'),
+        'Technology Stack'
+    )
 
 def main():
     swift_dir = Path('Phase 1 Wireframe')
@@ -690,8 +704,9 @@ def main():
         return
 
     # Update Architecture.html from ARCHITECTURE.md
-    print("\n📄 Updating Architecture documentation...")
+    print("\n📄 Updating documentation pages...")
     update_architecture_page()
+    update_technology_stack_page()
 
     # Map Swift filenames to HTML class names and their directory when they don't match
     filename_to_classname = {
