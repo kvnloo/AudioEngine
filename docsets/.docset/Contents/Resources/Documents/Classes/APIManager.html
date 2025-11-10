@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>APIManager Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/APIManager" class="dashAnchor"></a>
+
+    <a title="APIManager Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+           Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/kvnloo/AudioEngine">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html"> Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      APIManager Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/APIManager.html">APIManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Audio.html">Audio</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CustomUITextField.html">CustomUITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/EqualizerViewController.html">EqualizerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUIButton.html">GeneralUIButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUILabel.html">GeneralUILabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUITableView.html">GeneralUITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUITextField.html">GeneralUITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/InitialViewController.html">InitialViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LoginViewController.html">LoginViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RecorderViewController.html">RecorderViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SignUpViewController.html">SignUpViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIFont.html">UIFont</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>APIManager</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Data model that encapsulates recorded audio file information including file URL and display title.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17Phase_1_Wireframe10APIManager4userGSqCS_4User_"></a>
+                    <a name="//apple_ref/swift/Property/user" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17Phase_1_Wireframe10APIManager4userGSqCS_4User_">user</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17Phase_1_Wireframe10APIManager19initialNotificationVCSo14NSNotification4Name"></a>
+                    <a name="//apple_ref/swift/Property/initialNotification" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17Phase_1_Wireframe10APIManager19initialNotificationVCSo14NSNotification4Name">initialNotification</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notification to go back to <code><a href="../Classes/InitialViewController.html">InitialViewController</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">initialNotification</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"PresentInitialViewController"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17Phase_1_Wireframe10APIManager16demoNotificationVCSo14NSNotification4Name"></a>
+                    <a name="//apple_ref/swift/Property/demoNotification" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17Phase_1_Wireframe10APIManager16demoNotificationVCSo14NSNotification4Name">demoNotification</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notification to go to <code>DemoViewController</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">let</span> <span class="nv">demoNotification</span>    <span class="o">=</span> <span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"PresentDemoViewController"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17Phase_1_Wireframe10APIManager2vcGSQCSo16UIViewController_"></a>
+                    <a name="//apple_ref/swift/Property/vc" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17Phase_1_Wireframe10APIManager2vcGSQCSo16UIViewController_">vc</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC17Phase_1_Wireframe10APIManager3refCSo17DatabaseReference"></a>
+                    <a name="//apple_ref/swift/Property/ref" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC17Phase_1_Wireframe10APIManager3refCSo17DatabaseReference">ref</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC17Phase_1_Wireframe10APIManager14sharedInstanceS0_"></a>
+                    <a name="//apple_ref/swift/Variable/sharedInstance" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC17Phase_1_Wireframe10APIManager14sharedInstanceS0_">sharedInstance</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager10createUserFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/createUser()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager10createUserFT_T_">createUser()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager6signInFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/signIn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager6signInFT_T_">signIn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager8fbSignInFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/fbSignIn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager8fbSignInFT_T_">fbSignIn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager12googleSignInFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/googleSignIn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager12googleSignInFT_T_">googleSignIn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager4signFTGSQCSo9GIDSignIn_12didSignInForGSQCSo13GIDGoogleUser_9withErrorGSqPs5Error___T_"></a>
+                    <a name="//apple_ref/swift/Method/sign(_:didSignInFor:withError:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager4signFTGSQCSo9GIDSignIn_12didSignInForGSQCSo13GIDGoogleUser_9withErrorGSqPs5Error___T_">sign(_:didSignInFor:withError:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager4signFTGSQCSo9GIDSignIn_17didDisconnectWithGSQCSo13GIDGoogleUser_9withErrorGSQPs5Error___T_"></a>
+                    <a name="//apple_ref/swift/Method/sign(_:didDisconnectWith:withError:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager4signFTGSQCSo9GIDSignIn_17didDisconnectWithGSQCSo13GIDGoogleUser_9withErrorGSQPs5Error___T_">sign(_:didDisconnectWith:withError:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager4signFTGSQCSo9GIDSignIn_7presentGSQCSo16UIViewController__T_"></a>
+                    <a name="//apple_ref/swift/Method/sign(_:present:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager4signFTGSQCSo9GIDSignIn_7presentGSQCSo16UIViewController__T_">sign(_:present:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager4signFTGSQCSo9GIDSignIn_7dismissGSQCSo16UIViewController__T_"></a>
+                    <a name="//apple_ref/swift/Method/sign(_:dismiss:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager4signFTGSQCSo9GIDSignIn_7dismissGSQCSo16UIViewController__T_">sign(_:dismiss:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager8saveDataFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/saveData()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager8saveDataFT_T_">saveData()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager8loadDataFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/loadData()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager8loadDataFT_T_">loadData()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager6logoutFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/logout()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager6logoutFT_T_">logout()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17Phase_1_Wireframe10APIManager19presentNotificationFT5titleSS7messageSS11actionTitleSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/presentNotification(title:message:actionTitle:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17Phase_1_Wireframe10APIManager19presentNotificationFT5titleSS7messageSS11actionTitleSS_T_">presentNotification(title:message:actionTitle:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">APIManager</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GIDSignInDelegate</span><span class="p">,</span> <span class="kt">GIDSignInUIDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2025 <a class="link" href="https://github.com/kvnloo" target="_blank" rel="external">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

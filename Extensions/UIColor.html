@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>UIColor Extension Reference</title>
+<link href="../css/jazzy.css" rel="stylesheet" type="text/css"/>
+<link href="../css/highlight.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<script defer="" src="../js/jquery.min.js"></script>
+<script defer="" src="../js/jazzy.js"></script>
+<script defer="" src="../js/lunr.min.js"></script>
+<script defer="" src="../js/typeahead.jquery.js"></script>
+<script defer="" src="../js/jazzy.search.js"></script>
+</head>
+<body>
+<a class="dashAnchor" name="//apple_ref/swift/Extension/UIColor"></a>
+<a title="UIColor Extension Reference"></a>
+<header class="header">
+<p class="header-col header-col--primary">
+<a class="header-link" href="../index.html">
+           Docs
+        </a>
+         (100% documented)
+      </p>
+<p class="header-col--secondary">
+<form action="../search.json" role="search">
+<input data-typeahead="" placeholder="Search documentation" type="text"/>
+</form>
+</p>
+<p class="header-col header-col--secondary">
+<a class="header-link" href="https://github.com/kvnloo/AudioEngine">
+<img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+</p>
+</header>
+<p class="breadcrumbs">
+<a class="breadcrumb" href="../index.html"> Reference</a>
+<img class="carat" src="../img/carat.png"/>
+      UIColor Extension Reference
+    </p>
+<div class="content-wrapper">
+<nav class="navigation">
+<ul class="nav-groups">
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Classes.html">Classes</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/APIManager.html">APIManager</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/AppDelegate.html">AppDelegate</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/Audio.html">Audio</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/CustomUITextField.html">CustomUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerViewController.html">EqualizerViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIButton.html">GeneralUIButton</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUILabel.html">GeneralUILabel</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableView.html">GeneralUITableView</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITextField.html">GeneralUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/InitialViewController.html">InitialViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/LoginViewController.html">LoginViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecorderViewController.html">RecorderViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpViewController.html">SignUpViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/User.html">User</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIFont.html">UIFont</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name"><a class="nav-group-name-link" href="../TechnicalDocumentation.html">Technical Documentation</a><ul class="nav-group-tasks"><li class="nav-group-task"><a class="nav-group-task-link" href="../Architecture.html">Architecture</a></li><li class="nav-group-task"><a class="nav-group-task-link" href="../TechnologyStack.html">Technology Stack</a></li></ul></li></ul>
+</nav>
+<article class="main-content">
+<section class="section">
+<div class="section-content">
+<h1>UIColor</h1>
+<div class="declaration">
+<div class="language">
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+<p><code>GeneralUIColor.swift</code> is an extension on the UIColor class that defines the colors shown in the color palette generated for this application. It also includes colors for "Facebook Blue" and "Google+ Red". These are used for social media buttons with <code>GeneralUIButton</code> on the Login and Create Account view controllers. - Note: Many of the colors in storyboard are not accurate since the colors are later set using these definitions. - SeeAlso: <code>GeneralUIButton</code>, <code>GeneralUILabel</code>, <code>GeneralUITextField</code>, <code>GeneralUIViewController</code> for UI components using this palette</p>
+</div>
+</section>
+<section class="section">
+<div class="section-content">
+<div class="task-group">
+<div class="task-name-container">
+<a name="/Palette%20Slate%20Colors"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/Palette Slate Colors"></a>
+<a href="#/Palette%20Slate%20Colors">
+<h3 class="section-name">Palette Slate Colors</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor5WHITES0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/WHITE"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor5WHITES0_">WHITE</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Isabelline</code> in the color palette. This is the lightest color that is used for most text. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #edeeef
+RGB:  237 238 239
+HSV:  210 1 94
+CMYK: 1 0 0 6
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">WHITE</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor5CREMES0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/CREME"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor5CREMES0_">CREME</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Silver Chalice</code> in the color palette. This is the next color after <code>Isabelline</code> and is used as a highlight color for the <code>UINavigationBar</code> as well as heading text (i.e. large text). The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #a8aeaf
+RGB:  168 174 175
+HSV:  189 4 69
+CMYK: 4 1 0 31
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">CREME</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor8CHARCOALS0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/CHARCOAL"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor8CHARCOALS0_">CHARCOAL</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Outter Space</code> in the color palette. This is the next color after <code>Silver Chalice</code> and is used as the background color for <code><a href="../Classes/GeneralUITextField.html">GeneralUITextField</a></code>. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #414E51
+RGB:  65 78 81
+HSV:  191 20 32
+CMYK: 20 4 0 68
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">CHARCOAL</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor10BACKGROUNDS0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/BACKGROUND"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor10BACKGROUNDS0_">BACKGROUND</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Gunmetal</code> in the color palette. This is the next color after <code>Outter Space</code> and is used as the background color for all of the <code>UIViews</code> in <code>UIViewControllers</code> of type <code><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></code>. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #282d34
+RGB:  40 45 52
+HSV:  215 23 20
+CMYK: 23 13 0 80
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">BACKGROUND</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor5BLACKS0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/BLACK"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor5BLACKS0_">BLACK</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Raisin Black</code> in the color palette. This is the next color after <code>Gunmetal</code> and is used as the text color <code><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></code> found on light backgrounds or more particularly for the <code>LoginButton</code> found on the main page of this application. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #1d2025
+RGB:  29 32 37
+HSV:  218 22 15
+CMYK: 22 14 0 85
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">BLACK</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/Palette%20Highlight%20Colors"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/Palette Highlight Colors"></a>
+<a href="#/Palette%20Highlight%20Colors">
+<h3 class="section-name">Palette Highlight Colors</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor3REDS0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/RED"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor3REDS0_">RED</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Light Red Ochire</code> in the color palette. This color replaces all <code>Red</code> in the application. It can be used as a <code><a href="../Classes/GeneralUIButton.html">GeneralUIButton</a></code> color, or <code>UIView</code>. This can be seen in the <code>NoiseMeter</code> where this color indicates the loudest audio decibal range. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #ea6552
+RGB:  234 101 82
+HSV:  8 65 92
+CMYK: 0 57 65 8
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">RED</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor5GREENS0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/GREEN"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor5GREENS0_">GREEN</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Very Light Malachite Green</code> in the color palette. This color replaces all <code>Green</code> in the application. It can be used as a <code><a href="../Classes/GeneralUIButton.html">GeneralUIButton</a></code> color, or <code>UIView</code>. This can be seen in the <code>NoiseMeter</code> where this color indicates an audio decibal range. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #58e69a
+RGB:  88 230 154
+HSV:  148 62 90
+CMYK: 62 0 33 10
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">GREEN</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor6PURPLES0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/PURPLE"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor6PURPLES0_">PURPLE</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Pale Violet</code> in the color palette. This color replaces all <code>Purple</code> in the application. It can be used as a <code><a href="../Classes/GeneralUIButton.html">GeneralUIButton</a></code> color, or <code>UIView</code>. This can be seen in the <code>NoiseMeter</code> where this color indicates an audio decibal range. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #d0a5ff
+RGB:  208 165 255
+HSV:  269 35 100
+CMYK: 18 35 0 0
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">PURPLE</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor4BLUES0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/BLUE"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor4BLUES0_">BLUE</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Maya Blue</code> in the color palette. This color replaces all <code>Blue</code> in the application. It can be used as a <code><a href="../Classes/GeneralUIButton.html">GeneralUIButton</a></code> color, or <code>UIView</code>. This can be seen in the <code>NoiseMeter</code> where this color indicates an audio decibal range. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #7cc6fe
+RGB:  124 198 254
+HSV:  206 51 100
+CMYK: 51 22 0 0
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">BLUE</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor6ORANGES0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/ORANGE"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor6ORANGES0_">ORANGE</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Defined as <code>Macaroni and Cheese</code> in the color palette. This color replaces all <code>Orange</code> in the application. It can be used as a <code><a href="../Classes/GeneralUIButton.html">GeneralUIButton</a></code> color, or <code>UIView</code>. This can be seen in the <code>NoiseMeter</code> where this color indicates an audio decibal range. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #ffc689
+RGB:  255 198 137
+HSV:  31 46 100
+CMYK: 0 22 46 0
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">ORANGE</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/Social%20Media%20Button%20Colors"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/Social Media Button Colors"></a>
+<a href="#/Social%20Media%20Button%20Colors">
+<h3 class="section-name">Social Media Button Colors</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor7FB_BLUES0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/FB_BLUE"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor7FB_BLUES0_">FB_BLUE</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This is the official color designated by Facebook as their Facebook-Blue. This color was used as the background for the custom Facebook <code><a href="../Classes/GeneralUIButton.html">GeneralUIButton</a></code> that shows up on the Login and Create Account <code>ViewControllers</code>. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #3b5998
+RGB:  59 89 152
+HSV:  221 61 60
+CMYK: 61 41 0 40
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">FB_BLUE</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:ZvE17Phase_1_WireframeCSo7UIColor10GOOGLE_REDS0_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Variable/GOOGLE_RED"></a>
+<a class="token" href="#/s:ZvE17Phase_1_WireframeCSo7UIColor10GOOGLE_REDS0_">GOOGLE_RED</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This is the official color designated by Google as their Google-Red. This color was used as the background for the custom Google <code><a href="../Classes/GeneralUIButton.html">GeneralUIButton</a></code> that shows up on the Login and Create Account <code>ViewControllers</code>. The following values are this color’s representation in various color spaces:</p>
+<pre class="highlight plaintext"><code>HEX:  #dd4b39
+RGB:  221 75 57
+HSV:  7 74 87
+CMYK: 0 66 74 13
+</code></pre>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">GOOGLE_RED</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</article>
+</div>
+<section class="footer">
+<p>© 2025 <a class="link" href="https://github.com/kvnloo" rel="external" target="_blank">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" rel="external" target="_blank">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" rel="external" target="_blank">Realm</a> project.</p>
+</section>
+</body>
+</html>

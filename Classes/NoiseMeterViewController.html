@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>NoiseMeterViewController Class Reference</title>
+<link href="../css/jazzy.css" rel="stylesheet" type="text/css"/>
+<link href="../css/highlight.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<script defer="" src="../js/jquery.min.js"></script>
+<script defer="" src="../js/jazzy.js"></script>
+<script defer="" src="../js/lunr.min.js"></script>
+<script defer="" src="../js/typeahead.jquery.js"></script>
+<script defer="" src="../js/jazzy.search.js"></script>
+</head>
+<body>
+<a class="dashAnchor" name="//apple_ref/swift/Class/NoiseMeterViewController"></a>
+<a title="NoiseMeterViewController Class Reference"></a>
+<header class="header">
+<p class="header-col header-col--primary">
+<a class="header-link" href="../index.html">
+           Docs
+        </a>
+         (100% documented)
+      </p>
+<p class="header-col--secondary">
+<form action="../search.json" role="search">
+<input data-typeahead="" placeholder="Search documentation" type="text"/>
+</form>
+</p>
+<p class="header-col header-col--secondary">
+<a class="header-link" href="https://github.com/kvnloo/AudioEngine">
+<img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+</p>
+</header>
+<p class="breadcrumbs">
+<a class="breadcrumb" href="../index.html"> Reference</a>
+<img class="carat" src="../img/carat.png"/>
+      NoiseMeterViewController Class Reference
+    </p>
+<div class="content-wrapper">
+<nav class="navigation">
+<ul class="nav-groups">
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Classes.html">Classes</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/APIManager.html">APIManager</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/AppDelegate.html">AppDelegate</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/Audio.html">Audio</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/CustomUITextField.html">CustomUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerViewController.html">EqualizerViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIButton.html">GeneralUIButton</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUILabel.html">GeneralUILabel</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableView.html">GeneralUITableView</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITextField.html">GeneralUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/InitialViewController.html">InitialViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/LoginViewController.html">LoginViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecorderViewController.html">RecorderViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpViewController.html">SignUpViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/User.html">User</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIFont.html">UIFont</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name"><a class="nav-group-name-link" href="../TechnicalDocumentation.html">Technical Documentation</a><ul class="nav-group-tasks"><li class="nav-group-task"><a class="nav-group-task-link" href="../Architecture.html">Architecture</a></li><li class="nav-group-task"><a class="nav-group-task-link" href="../TechnologyStack.html">Technology Stack</a></li></ul></li></ul>
+</nav>
+<article class="main-content">
+<section class="section">
+<div class="section-content">
+<h1>NoiseMeterViewController</h1>
+<div class="declaration">
+<div class="language">
+<pre class="highlight"><code><span class="kd">class</span> <span class="kt">NoiseMeterViewController</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></span><span class="p">,</span>  <span class="kt">AVAudioRecorderDelegate</span></code></pre>
+</div>
+</div>
+<p>A custom class that inherits from <code><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></code> and <code>AVAudioRecorderDelegate</code>. It was created to control the NoiseMeterView.</p>
+</div>
+</section>
+<section class="section">
+<div class="section-content">
+<div class="task-group">
+<div class="task-name-container">
+<a name="/IBOutlets"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/IBOutlets"></a>
+<a href="#/IBOutlets">
+<h3 class="section-name">IBOutlets</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController15noiseLevelLabelXwGSQCS_14GeneralUILabel_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/noiseLevelLabel"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController15noiseLevelLabelXwGSQCS_14GeneralUILabel_">noiseLevelLabel</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A dynamic <code><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></code> that displays the Noise Level.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">noiseLevelLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController7dbLabelXwGSQCS_14GeneralUILabel_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/dbLabel"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController7dbLabelXwGSQCS_14GeneralUILabel_">dbLabel</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></code> that displays the dB Unit.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">dbLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController11silentLabelXwGSQCS_14GeneralUILabel_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/silentLabel"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController11silentLabelXwGSQCS_14GeneralUILabel_">silentLabel</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></code> that captions the silent UIView.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">silentLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController10quietLabelXwGSQCS_14GeneralUILabel_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/quietLabel"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController10quietLabelXwGSQCS_14GeneralUILabel_">quietLabel</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></code> that captions the quiet UIView.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">quietLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController12averageLabelXwGSQCS_14GeneralUILabel_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/averageLabel"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController12averageLabelXwGSQCS_14GeneralUILabel_">averageLabel</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></code> that captions the average UIView.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">averageLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController10noisyLabelXwGSQCS_14GeneralUILabel_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/noisyLabel"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController10noisyLabelXwGSQCS_14GeneralUILabel_">noisyLabel</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></code> that captions the noisy UIView.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">noisyLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController9loudLabelXwGSQCS_14GeneralUILabel_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/loudLabel"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController9loudLabelXwGSQCS_14GeneralUILabel_">loudLabel</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></code> that captions the loud UIView.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">loudLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController17noiseMeterViewOneXwGSQCSo6UIView_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/noiseMeterViewOne"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController17noiseMeterViewOneXwGSQCSo6UIView_">noiseMeterViewOne</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code>UIView</code> that is colored <code><a href="../Extensions/UIColor.html#/s:ZvE17Phase_1_WireframeCSo7UIColor4BLUES0_">UIColor.BLUE</a></code> to represent the ‘silent’ noise range.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">noiseMeterViewOne</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController17noiseMeterViewTwoXwGSQCSo6UIView_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/noiseMeterViewTwo"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController17noiseMeterViewTwoXwGSQCSo6UIView_">noiseMeterViewTwo</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code>UIView</code> that is colored <code><a href="../Extensions/UIColor.html#/s:ZvE17Phase_1_WireframeCSo7UIColor5GREENS0_">UIColor.GREEN</a></code> to represent the ‘quiet’ noise range.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">noiseMeterViewTwo</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController19noiseMeterViewThreeXwGSQCSo6UIView_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/noiseMeterViewThree"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController19noiseMeterViewThreeXwGSQCSo6UIView_">noiseMeterViewThree</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code>UIView</code> that is colored <code><a href="../Extensions/UIColor.html#/s:ZvE17Phase_1_WireframeCSo7UIColor6PURPLES0_">UIColor.PURPLE</a></code> to represent the ‘average’ noise range.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">noiseMeterViewThree</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController18noiseMeterViewFourXwGSQCSo6UIView_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/noiseMeterViewFour"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController18noiseMeterViewFourXwGSQCSo6UIView_">noiseMeterViewFour</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code>UIView</code> that is colored <code><a href="../Extensions/UIColor.html#/s:ZvE17Phase_1_WireframeCSo7UIColor6ORANGES0_">UIColor.ORANGE</a></code> to represent the ‘noisy’ noise range.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">noiseMeterViewFour</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController18noiseMeterViewFiveXwGSQCSo6UIView_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/noiseMeterViewFive"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController18noiseMeterViewFiveXwGSQCSo6UIView_">noiseMeterViewFive</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A static <code>UIView</code> that is colored <code><a href="../Extensions/UIColor.html#/s:ZvE17Phase_1_WireframeCSo7UIColor3REDS0_">UIColor.RED</a></code> to represent the ‘loud’ noise range.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">noiseMeterViewFive</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/Global%20Variables"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/Global Variables"></a>
+<a href="#/Global%20Variables">
+<h3 class="section-name">Global Variables</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController8recorderGSqCSo15AVAudioRecorder_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/recorder"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController8recorderGSqCSo15AVAudioRecorder_">recorder</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The recorder object on which the noise meter relies..</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">recorder</span><span class="p">:</span> <span class="kt">AVAudioRecorder</span><span class="p">?</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController10levelTimerCSo5Timer"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/levelTimer"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController10levelTimerCSo5Timer">levelTimer</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A timer object to gathers noise data frequently.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">levelTimer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe24NoiseMeterViewController3dBsCSo7NSArray"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/dBs"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe24NoiseMeterViewController3dBsCSo7NSArray">dBs</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>An array to store the recorded noise levels. This can possibly be used to display a history graph of the past noise levels.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">dBs</span><span class="p">:</span> <span class="kt">NSArray</span> <span class="o">=</span> <span class="kt">NSArray</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/GeneralUIViewController%20Methods"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/GeneralUIViewController Methods"></a>
+<a href="#/GeneralUIViewController%20Methods">
+<h3 class="section-name">GeneralUIViewController Methods</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController14viewWillAppearFSbT_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/viewWillAppear(_:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController14viewWillAppearFSbT_">viewWillAppear(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Calls <code>setupNoiseMeter</code> to color all of the <code>UIViews</code> to make them look like a legend for the <code><a href="../Classes/NoiseMeterViewController.html#/s:vC17Phase_1_Wireframe24NoiseMeterViewController15noiseLevelLabelXwGSQCS_14GeneralUILabel_">noiseLevelLabel</a></code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController11viewDidLoadFT_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/viewDidLoad()"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController11viewDidLoadFT_T_">viewDidLoad()</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This function sets up custom UI Elements specific to this view then calls <code>setupAVAudioSession</code> to set up the audio session that measures noise.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/Logic"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/Logic"></a>
+<a href="#/Logic">
+<h3 class="section-name">Logic</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController19setupAVAudioSessionFT_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/setupAVAudioSession()"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController19setupAVAudioSessionFT_T_">setupAVAudioSession()</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Creates an <code>AVAudioSession</code> as a <code>sharedInstance</code> then requests recording permission from the user. If the user allows recording, the <code>AVAudioSession</code> has settings changed and the <code>record</code> method is called.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">setupAVAudioSession</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController6recordFT8filenameSS8settingsGVs10DictionarySSSi_7meteredSb22timeIntervalForResultsSd_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/record(filename:settings:metered:timeIntervalForResults:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController6recordFT8filenameSS8settingsGVs10DictionarySSSi_7meteredSb22timeIntervalForResultsSd_T_">record(filename:settings:metered:timeIntervalForResults:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>A function that allows the <code><a href="../Classes/NoiseMeterViewController.html#/s:vC17Phase_1_Wireframe24NoiseMeterViewController8recorderGSqCSo15AVAudioRecorder_">recorder</a></code> to record storing the file at <code>filename (@param)</code>, with settings <code>settings (@param)</code>, a flag to determine if the recording should be metered, and a timeInterval for <code><a href="../Classes/NoiseMeterViewController.html#/s:vC17Phase_1_Wireframe24NoiseMeterViewController10levelTimerCSo5Timer">levelTimer</a></code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">record</span><span class="p">(</span><span class="nv">filename</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Int</span><span class="p">],</span> <span class="nv">metered</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">timeIntervalForResults</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController18levelTimerCallbackFT_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/levelTimerCallback()"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController18levelTimerCallbackFT_T_">levelTimerCallback()</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The callback function for <code><a href="../Classes/NoiseMeterViewController.html#/s:vC17Phase_1_Wireframe24NoiseMeterViewController10levelTimerCSo5Timer">levelTimer</a></code>. This allows the view to be updated with the new noise levels: <code><a href="../Classes/NoiseMeterViewController.html#/s:vC17Phase_1_Wireframe24NoiseMeterViewController8recorderGSqCSo15AVAudioRecorder_">recorder</a></code> calls <code>updateMeters</code> and <code>updateLabels</code> is called to update the view.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">levelTimerCallback</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController12updateLabelsFT2dBSf_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/updateLabels(dB:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController12updateLabelsFT2dBSf_T_">updateLabels(dB:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This function changes the text in the <code><a href="../Classes/NoiseMeterViewController.html#/s:vC17Phase_1_Wireframe24NoiseMeterViewController15noiseLevelLabelXwGSQCS_14GeneralUILabel_">noiseLevelLabel</a></code> and sets the color of the text based on the <code>NoiseMeterColors</code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">updateLabels</span><span class="p">(</span><span class="nv">dB</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController16convertToDecibelFT13originalValueSf_Sf"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/convertToDecibel(originalValue:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController16convertToDecibelFT13originalValueSf_Sf">convertToDecibel(originalValue:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Converts from Apple standard noise levels to the universally used decibel system. Changes values from a linear [-160, 0] scale to a logrithmic [0, 120] scale.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">convertToDecibel</span> <span class="p">(</span><span class="nv">originalValue</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Float</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController15setupNoiseMeterFT_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/setupNoiseMeter()"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController15setupNoiseMeterFT_T_">setupNoiseMeter()</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>This function sets up the different small <code>UIViews</code> that create the NoiseMeter at the top of this <code>UIView</code>. Also sets the font for the labels that describe each color of the meter.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">setupNoiseMeter</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/AVAudioRecorderDelegate"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/AVAudioRecorderDelegate"></a>
+<a href="#/AVAudioRecorderDelegate">
+<h3 class="section-name">AVAudioRecorderDelegate</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController31audioRecorderDidFinishRecordingFTCSo15AVAudioRecorder12successfullySb_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/audioRecorderDidFinishRecording(_:successfully:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController31audioRecorderDidFinishRecordingFTCSo15AVAudioRecorder12successfullySb_T_">audioRecorderDidFinishRecording(_:successfully:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Ensures that when the recording ends a sucess or failure flag is sent to <code>recordingEnded</code> function.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">audioRecorderDidFinishRecording</span><span class="p">(</span><span class="n">_</span> <span class="nv">recorder</span><span class="p">:</span> <span class="kt">AVAudioRecorder</span><span class="p">,</span> <span class="n">successfully</span> <span class="nv">flag</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe24NoiseMeterViewController14recordingEndedFT7successSb_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/recordingEnded(success:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe24NoiseMeterViewController14recordingEndedFT7successSb_T_">recordingEnded(success:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Prints whether or not the recording session ended correctly.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">recordingEnded</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</article>
+</div>
+<section class="footer">
+<p>© 2025 <a class="link" href="https://github.com/kvnloo" rel="external" target="_blank">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" rel="external" target="_blank">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" rel="external" target="_blank">Realm</a> project.</p>
+</section>
+</body>
+</html>

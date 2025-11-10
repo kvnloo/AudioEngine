@@ -1,0 +1,173 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 22,
+      "symbol": "APIManager.user",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 27,
+      "symbol": "APIManager.vc",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 28,
+      "symbol": "APIManager.ref",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 31,
+      "symbol": "APIManager.sharedInstance",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 33,
+      "symbol": "APIManager.createUser()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 49,
+      "symbol": "APIManager.signIn()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 64,
+      "symbol": "APIManager.fbSignIn()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 85,
+      "symbol": "APIManager.googleSignIn()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 89,
+      "symbol": "APIManager.sign(_:didSignInFor:withError:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 110,
+      "symbol": "APIManager.sign(_:didDisconnectWith:withError:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 115,
+      "symbol": "APIManager.sign(_:present:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 120,
+      "symbol": "APIManager.sign(_:dismiss:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 124,
+      "symbol": "APIManager.saveData()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 132,
+      "symbol": "APIManager.loadData()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 142,
+      "symbol": "APIManager.logout()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/APIManager.swift",
+      "line": 146,
+      "symbol": "APIManager.presentNotification(title:message:actionTitle:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/AppDelegate.swift",
+      "line": 29,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/AppDelegate.swift",
+      "line": 72,
+      "symbol": "AppDelegate.switchViewControllers(viewController:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/AudioSingletons.swift",
+      "line": 58,
+      "symbol": "Audio.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/EqualizerTableViewCell.swift",
+      "line": 26,
+      "symbol": "EqualizerTableViewCell.section",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/EqualizerViewController.swift",
+      "line": 25,
+      "symbol": "EqualizerViewController.sliderStackView1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/EqualizerViewController.swift",
+      "line": 26,
+      "symbol": "EqualizerViewController.sliderStackView2",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/EqualizerViewController.swift",
+      "line": 37,
+      "symbol": "EqualizerViewController.channel1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe/Phase 1 Wireframe/User.swift",
+      "line": 11,
+      "symbol": "User",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/Kevin/Desktop/Projects/JubiAudio/PhaseIWireframe"
+}

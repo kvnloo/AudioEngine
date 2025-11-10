@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>RecorderViewController Class Reference</title>
+<link href="../css/jazzy.css" rel="stylesheet" type="text/css"/>
+<link href="../css/highlight.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<script defer="" src="../js/jquery.min.js"></script>
+<script defer="" src="../js/jazzy.js"></script>
+<script defer="" src="../js/lunr.min.js"></script>
+<script defer="" src="../js/typeahead.jquery.js"></script>
+<script defer="" src="../js/jazzy.search.js"></script>
+</head>
+<body>
+<a class="dashAnchor" name="//apple_ref/swift/Class/RecorderViewController"></a>
+<a title="RecorderViewController Class Reference"></a>
+<header class="header">
+<p class="header-col header-col--primary">
+<a class="header-link" href="../index.html">
+           Docs
+        </a>
+         (100% documented)
+      </p>
+<p class="header-col--secondary">
+<form action="../search.json" role="search">
+<input data-typeahead="" placeholder="Search documentation" type="text"/>
+</form>
+</p>
+<p class="header-col header-col--secondary">
+<a class="header-link" href="https://github.com/kvnloo/AudioEngine">
+<img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+</p>
+</header>
+<p class="breadcrumbs">
+<a class="breadcrumb" href="../index.html"> Reference</a>
+<img class="carat" src="../img/carat.png"/>
+      RecorderViewController Class Reference
+    </p>
+<div class="content-wrapper">
+<nav class="navigation">
+<ul class="nav-groups">
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Classes.html">Classes</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/APIManager.html">APIManager</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/AppDelegate.html">AppDelegate</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/Audio.html">Audio</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/CustomUITextField.html">CustomUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTabBarController.html">EqualizerTabBarController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerTableViewCell.html">EqualizerTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/EqualizerViewController.html">EqualizerViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIButton.html">GeneralUIButton</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUILabel.html">GeneralUILabel</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableView.html">GeneralUITableView</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITableViewCell.html">GeneralUITableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUITextField.html">GeneralUITextField</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/InitialViewController.html">InitialViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/LoginViewController.html">LoginViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/NoiseMeterViewController.html">NoiseMeterViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/RecorderViewController.html">RecorderViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpTableViewCell.html">SignUpTableViewCell</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/SignUpViewController.html">SignUpViewController</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/User.html">User</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIColor.html">UIColor</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UIFont.html">UIFont</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Extensions/UINavigationBar.html">UINavigationBar</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name"><a class="nav-group-name-link" href="../TechnicalDocumentation.html">Technical Documentation</a><ul class="nav-group-tasks"><li class="nav-group-task"><a class="nav-group-task-link" href="../Architecture.html">Architecture</a></li><li class="nav-group-task"><a class="nav-group-task-link" href="../TechnologyStack.html">Technology Stack</a></li></ul></li></ul>
+</nav>
+<article class="main-content">
+<section class="section">
+<div class="section-content">
+<h1>RecorderViewController</h1>
+<div class="declaration">
+<div class="language">
+<pre class="highlight"><code><span class="kd">class</span> <span class="kt">RecorderViewController</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></span><span class="p">,</span> <span class="kt">AVAudioRecorderDelegate</span></code></pre>
+</div>
+</div>
+<p>This <code><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></code> controls the Equalizer’s recorder view. It allows the user to prerecord an audio clip if they do not want to use the equalizer in real-time.</p>
+<p>Provides audio recording functionality for the equalizer, allowing users to pre-record audio clips for processing.</p>
+</div>
+</section>
+<section class="section">
+<div class="section-content">
+<div class="task-group">
+<div class="task-name-container">
+<a name="/IBOutlets"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/IBOutlets"></a>
+<a href="#/IBOutlets">
+<h3 class="section-name">IBOutlets</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe22RecorderViewController12recordButtonXwGSQCSo8UIButton_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/recordButton"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe22RecorderViewController12recordButtonXwGSQCSo8UIButton_">recordButton</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The <code>UIButton</code> to start recording.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">recordButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe22RecorderViewController10stopButtonXwGSQCSo8UIButton_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/stopButton"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe22RecorderViewController10stopButtonXwGSQCSo8UIButton_">stopButton</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The <code>UIButton</code> to stop recording.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">stopButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe22RecorderViewController14recordingLabelXwGSQCS_14GeneralUILabel_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/recordingLabel"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe22RecorderViewController14recordingLabelXwGSQCS_14GeneralUILabel_">recordingLabel</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The <code><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></code> that displays if in record mode.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">recordingLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeneralUILabel.html">GeneralUILabel</a></span><span class="o">!</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/Global%20Variables"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/Global Variables"></a>
+<a href="#/Global%20Variables">
+<h3 class="section-name">Global Variables</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:vC17Phase_1_Wireframe22RecorderViewController5stateGSQSb_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Property/state"></a>
+<a class="token" href="#/s:vC17Phase_1_Wireframe22RecorderViewController5stateGSQSb_">state</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>The state of the recorder -&gt; true if recording, false if paused or stopped.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">var</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">Bool</span><span class="o">!</span> <span class="c1">// This will decide if the button should be a mic or the pause button</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/GeneralUIViewController%20Methods"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/GeneralUIViewController Methods"></a>
+<a href="#/GeneralUIViewController%20Methods">
+<h3 class="section-name">GeneralUIViewController Methods</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe22RecorderViewController14viewWillAppearFSbT_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/viewWillAppear(_:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe22RecorderViewController14viewWillAppearFSbT_">viewWillAppear(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Hide <code><a href="../Classes/RecorderViewController.html#/s:vC17Phase_1_Wireframe22RecorderViewController10stopButtonXwGSQCSo8UIButton_">stopButton</a></code> and <code><a href="../Classes/RecorderViewController.html#/s:vC17Phase_1_Wireframe22RecorderViewController14recordingLabelXwGSQCS_14GeneralUILabel_">recordingLabel</a></code>. This must be done since the user should not be able to stop the recording before it even starts.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe22RecorderViewController11viewDidLoadFT_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/viewDidLoad()"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe22RecorderViewController11viewDidLoadFT_T_">viewDidLoad()</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Set the state and font of the <code><a href="../Classes/RecorderViewController.html#/s:vC17Phase_1_Wireframe22RecorderViewController14recordingLabelXwGSQCS_14GeneralUILabel_">recordingLabel</a></code>. Call <code>setupAVAudioSession</code> to initiate the recording process.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe22RecorderViewController17viewWillDisappearFSbT_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/viewWillDisappear(_:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe22RecorderViewController17viewWillDisappearFSbT_">viewWillDisappear(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Set the state so that it does not keep getting modified.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillDisappear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/Navigation"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/Navigation"></a>
+<a href="#/Navigation">
+<h3 class="section-name">Navigation</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe22RecorderViewController7prepareFT3forCSo17UIStoryboardSegue6senderGSqP___T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/prepare(for:sender:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe22RecorderViewController7prepareFT3forCSo17UIStoryboardSegue6senderGSqP___T_">prepare(for:sender:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Overridden to send <code><a href="../Classes/RecordedAudioObject.html">RecordedAudioObject</a></code> to the next <code><a href="../Classes/GeneralUIViewController.html">GeneralUIViewController</a></code> that we are seguing to. In this case the only possible segue is to <code><a href="../Classes/EqualizerViewController.html">EqualizerViewController</a></code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">prepare</span><span class="p">(</span><span class="k">for</span> <span class="nv">segue</span><span class="p">:</span> <span class="kt">UIStoryboardSegue</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/AVAudioRecorderDelegate"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/AVAudioRecorderDelegate"></a>
+<a href="#/AVAudioRecorderDelegate">
+<h3 class="section-name">AVAudioRecorderDelegate</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe22RecorderViewController31audioRecorderDidFinishRecordingFTCSo15AVAudioRecorder12successfullySb_T_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/audioRecorderDidFinishRecording(_:successfully:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe22RecorderViewController31audioRecorderDidFinishRecordingFTCSo15AVAudioRecorder12successfullySb_T_">audioRecorderDidFinishRecording(_:successfully:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Ensures that when the recording ends a sucess or failure flag is sent to <code>recordingEnded</code> function.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">audioRecorderDidFinishRecording</span><span class="p">(</span><span class="n">_</span> <span class="nv">recorder</span><span class="p">:</span> <span class="kt">AVAudioRecorder</span><span class="p">,</span> <span class="n">successfully</span> <span class="nv">flag</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+<div class="task-group">
+<div class="task-name-container">
+<a name="/IBActions"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Section/IBActions"></a>
+<a href="#/IBActions">
+<h3 class="section-name">IBActions</h3>
+</a>
+</div>
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe22RecorderViewController15toggleRecordingFCSo8UIButtonT_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/toggleRecording(_:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe22RecorderViewController15toggleRecordingFCSo8UIButtonT_">toggleRecording(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Toggle the state - this function handles the logic of switching the state as well as toggling the visibility for different views.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">toggleRecording</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FC17Phase_1_Wireframe22RecorderViewController13stopRecordingFCSo8UIButtonT_"></a>
+<a class="dashAnchor" name="//apple_ref/swift/Method/stopRecording(_:)"></a>
+<a class="token" href="#/s:FC17Phase_1_Wireframe22RecorderViewController13stopRecordingFCSo8UIButtonT_">stopRecording(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Stops recording by invoking the <code>AVAudioRecorder's stop</code> method on <code>Audio.sharedInstance.recorder</code>.</p>
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">stopRecording</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</article>
+</div>
+<section class="footer">
+<p>© 2025 <a class="link" href="https://github.com/kvnloo" rel="external" target="_blank">Kevin</a>. All rights reserved. (Last updated: 2017-06-06)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" rel="external" target="_blank">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" rel="external" target="_blank">Realm</a> project.</p>
+</section>
+</body>
+</html>
