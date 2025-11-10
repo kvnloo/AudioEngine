@@ -604,22 +604,41 @@ def update_architecture_page():
     new_soup = BeautifulSoup(html_content, 'html.parser')
     section_content.append(new_soup)
 
-    # Collect all classes and extensions for the navigation links
+    # Collect all classes and extensions for linking and navigation
     classes_dir = Path('docs/Classes')
     extensions_dir = Path('docs/Extensions')
 
     class_links = []
     extension_links = []
+    class_map = {}  # Map class names to their HTML file paths
 
     if classes_dir.exists():
         for html_file in sorted(classes_dir.glob('*.html')):
             class_name = html_file.stem
             class_links.append((class_name, f'Classes/{class_name}.html'))
+            class_map[class_name] = f'Classes/{class_name}.html'
 
     if extensions_dir.exists():
         for html_file in sorted(extensions_dir.glob('*.html')):
             ext_name = html_file.stem
             extension_links.append((ext_name, f'Extensions/{ext_name}.html'))
+            class_map[ext_name] = f'Extensions/{ext_name}.html'
+
+    # Convert code references to links in the architecture content
+    links_added = 0
+    for code_tag in section_content.find_all('code'):
+        code_text = code_tag.get_text().strip()
+
+        # Check if this code reference matches a class or extension
+        if code_text in class_map:
+            # Wrap code tag with link
+            a_tag = soup.new_tag('a', href=class_map[code_text])
+            # Move code tag inside the link
+            code_tag.wrap(a_tag)
+            links_added += 1
+
+    if links_added > 0:
+        print(f"      Converted {links_added} class references to links")
 
     # Update navigation links
     nav = soup.find('nav', class_='navigation')
