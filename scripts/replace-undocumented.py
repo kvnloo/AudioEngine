@@ -751,41 +751,14 @@ def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
                         li.append(a)
                         tasks_ul.append(li)
 
-        # Remove any existing "Architecture" nav group to avoid duplication
+        # Remove any existing "Architecture" or "Guides" nav groups to avoid duplication
+        # The update_all_pages_navigation() function will add "Technical Documentation" section
         nav_groups = nav.find('ul', class_='nav-groups')
         if nav_groups:
             for nav_group in nav_groups.find_all('li', class_='nav-group-name'):
                 group_link = nav_group.find('a', class_='nav-group-name-link')
-                if group_link and 'Architecture' in group_link.get_text():
-                    nav_group.decompose()  # Remove this nav group entirely
-
-        # Add Guides section at the end with Architecture and Technology Stack links
-        if nav_groups:
-            # Create Guides nav group (using "Guides" to avoid confusion with "Architecture" sub-item)
-            guides_nav_group = soup.new_tag('li', **{'class': 'nav-group-name'})
-            guides_group_link = soup.new_tag('a', **{'class': 'nav-group-name-link'}, href='../Architecture.html')
-            guides_group_link.string = 'Guides'
-            guides_nav_group.append(guides_group_link)
-
-            # Create tasks list for guide links
-            guides_tasks_ul = soup.new_tag('ul', **{'class': 'nav-group-tasks'})
-
-            # Add Architecture link
-            arch_li = soup.new_tag('li', **{'class': 'nav-group-task'})
-            arch_a = soup.new_tag('a', **{'class': 'nav-group-task-link'}, href='../Architecture.html')
-            arch_a.string = 'Architecture'
-            arch_li.append(arch_a)
-            guides_tasks_ul.append(arch_li)
-
-            # Add Technology Stack link
-            tech_li = soup.new_tag('li', **{'class': 'nav-group-task'})
-            tech_a = soup.new_tag('a', **{'class': 'nav-group-task-link'}, href='../TechnologyStack.html')
-            tech_a.string = 'Technology Stack'
-            tech_li.append(tech_a)
-            guides_tasks_ul.append(tech_li)
-
-            guides_nav_group.append(guides_tasks_ul)
-            nav_groups.append(guides_nav_group)
+                if group_link and ('Architecture' in group_link.get_text() or 'Guides' in group_link.get_text()):
+                    nav_group.decompose()  # Remove to prevent duplication
 
     # Write updated HTML
     with open(html_file, 'w', encoding='utf-8') as f:
@@ -871,7 +844,7 @@ def update_all_pages_navigation():
             # Create Technical Documentation nav group
             guides_nav_group = soup.new_tag('li', **{'class': 'nav-group-name'})
             guides_group_link = soup.new_tag('a', **{'class': 'nav-group-name-link'},
-                                            href=f'{rel_prefix}Architecture.html')
+                                            href=f'{rel_prefix}TechnicalDocumentation.html')
             guides_group_link.string = 'Technical Documentation'
             guides_nav_group.append(guides_group_link)
 
