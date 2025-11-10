@@ -751,8 +751,15 @@ def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
                         li.append(a)
                         tasks_ul.append(li)
 
-        # Add Guides section at the end with Architecture and Technology Stack links
+        # Remove any existing "Architecture" nav group to avoid duplication
         nav_groups = nav.find('ul', class_='nav-groups')
+        if nav_groups:
+            for nav_group in nav_groups.find_all('li', class_='nav-group-name'):
+                group_link = nav_group.find('a', class_='nav-group-name-link')
+                if group_link and 'Architecture' in group_link.get_text():
+                    nav_group.decompose()  # Remove this nav group entirely
+
+        # Add Guides section at the end with Architecture and Technology Stack links
         if nav_groups:
             # Create Guides nav group (using "Guides" to avoid confusion with "Architecture" sub-item)
             guides_nav_group = soup.new_tag('li', **{'class': 'nav-group-name'})
