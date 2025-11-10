@@ -498,6 +498,165 @@ def replace_undocumented_in_html(html_file: Path, inline_docs: Dict[str, str]):
 
     return replaced_count
 
+def convert_markdown_to_html(markdown_content: str) -> str:
+    """Convert markdown content to HTML suitable for insertion into docs."""
+    lines = markdown_content.split('\n')
+    html_lines = []
+    in_code_block = False
+    in_list = False
+
+    for line in lines:
+        # Handle code blocks
+        if line.strip().startswith('```'):
+            if in_code_block:
+                html_lines.append('</code></pre>')
+                in_code_block = False
+            else:
+                html_lines.append('<pre><code>')
+                in_code_block = True
+            continue
+
+        if in_code_block:
+            html_lines.append(line)
+            continue
+
+        # Handle headers
+        if line.startswith('# '):
+            html_lines.append(f'<h1>{line[2:]}</h1>')
+        elif line.startswith('## '):
+            html_lines.append(f'<h2>{line[3:]}</h2>')
+        elif line.startswith('### '):
+            html_lines.append(f'<h3>{line[4:]}</h3>')
+        elif line.startswith('#### '):
+            html_lines.append(f'<h4>{line[5:]}</h4>')
+        # Handle unordered lists
+        elif line.strip().startswith('- '):
+            if not in_list:
+                html_lines.append('<ul>')
+                in_list = True
+            html_lines.append(f'<li>{line.strip()[2:]}</li>')
+        # Handle ordered lists
+        elif re.match(r'^\d+\.\s', line.strip()):
+            if not in_list:
+                html_lines.append('<ol>')
+                in_list = True
+            html_lines.append(f'<li>{re.sub(r"^\d+\.\s", "", line.strip())}</li>')
+        # Close list if needed
+        elif in_list and line.strip() == '':
+            html_lines.append('</ul>' if html_lines[-1].endswith('</li>') else '</ol>')
+            in_list = False
+        # Handle bold text **text**
+        elif '**' in line:
+            line = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
+            html_lines.append(f'<p>{line}</p>')
+        # Handle inline code `code`
+        elif '`' in line:
+            line = re.sub(r'`(.+?)`', r'<code>\1</code>', line)
+            html_lines.append(f'<p>{line}</p>')
+        # Regular paragraphs
+        elif line.strip():
+            html_lines.append(f'<p>{line}</p>')
+        else:
+            html_lines.append('')
+
+    # Close any open lists
+    if in_list:
+        html_lines.append('</ul>')
+
+    return '\n'.join(html_lines)
+
+def update_architecture_page():
+    """Update Architecture.html with content from ARCHITECTURE.md"""
+    arch_md = Path('ARCHITECTURE.md')
+    arch_html = Path('docs/Architecture.html')
+
+    if not arch_md.exists():
+        print(f"  ⚠️  ARCHITECTURE.md not found, skipping...")
+        return
+
+    if not arch_html.exists():
+        print(f"  ⚠️  docs/Architecture.html not found, skipping...")
+        return
+
+    print("  📝 Updating Architecture.html from ARCHITECTURE.md...")
+
+    # Read markdown content
+    with open(arch_md, 'r', encoding='utf-8') as f:
+        md_content = f.read()
+
+    # Parse HTML
+    with open(arch_html, 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f.read(), 'html.parser')
+
+    # Find the section-content div
+    section_content = soup.find('div', class_='section-content')
+    if not section_content:
+        print("  ⚠️  Could not find section-content div")
+        return
+
+    # Clear existing content
+    section_content.clear()
+
+    # Convert markdown to HTML
+    html_content = convert_markdown_to_html(md_content)
+
+    # Parse and insert new content
+    new_soup = BeautifulSoup(html_content, 'html.parser')
+    section_content.append(new_soup)
+
+    # Collect all classes and extensions for the navigation links
+    classes_dir = Path('docs/Classes')
+    extensions_dir = Path('docs/Extensions')
+
+    class_links = []
+    extension_links = []
+
+    if classes_dir.exists():
+        for html_file in sorted(classes_dir.glob('*.html')):
+            class_name = html_file.stem
+            class_links.append((class_name, f'Classes/{class_name}.html'))
+
+    if extensions_dir.exists():
+        for html_file in sorted(extensions_dir.glob('*.html')):
+            ext_name = html_file.stem
+            extension_links.append((ext_name, f'Extensions/{ext_name}.html'))
+
+    # Update navigation links
+    nav = soup.find('nav', class_='navigation')
+    if nav:
+        # Find Classes nav group
+        for nav_group in nav.find_all('li', class_='nav-group-name'):
+            group_link = nav_group.find('a', class_='nav-group-name-link')
+            if group_link and 'Classes' in group_link.get_text():
+                tasks_ul = nav_group.find('ul', class_='nav-group-tasks')
+                if tasks_ul:
+                    tasks_ul.clear()
+                    for name, link in class_links:
+                        li = soup.new_tag('li', **{'class': 'nav-group-task'})
+                        a = soup.new_tag('a', **{'class': 'nav-group-task-link'}, href=link)
+                        a.string = name
+                        li.append(a)
+                        tasks_ul.append(li)
+
+            elif group_link and 'Extensions' in group_link.get_text():
+                tasks_ul = nav_group.find('ul', class_='nav-group-tasks')
+                if tasks_ul:
+                    tasks_ul.clear()
+                    for name, link in extension_links:
+                        li = soup.new_tag('li', **{'class': 'nav-group-task'})
+                        a = soup.new_tag('a', **{'class': 'nav-group-task-link'}, href=link)
+                        a.string = name
+                        li.append(a)
+                        tasks_ul.append(li)
+
+    # Write updated HTML
+    with open(arch_html, 'w', encoding='utf-8') as f:
+        f.write(str(soup))
+
+    print("  ✅ Architecture.html updated successfully")
+    print(f"      Added {len(class_links)} class links")
+    print(f"      Added {len(extension_links)} extension links")
+
 def main():
     swift_dir = Path('Phase 1 Wireframe')
     classes_dir = Path('docs/Classes')
@@ -510,6 +669,10 @@ def main():
     if not classes_dir.exists():
         print(f"Error: HTML directory not found: {classes_dir}")
         return
+
+    # Update Architecture.html from ARCHITECTURE.md
+    print("\n📄 Updating Architecture documentation...")
+    update_architecture_page()
 
     # Map Swift filenames to HTML class names and their directory when they don't match
     filename_to_classname = {
