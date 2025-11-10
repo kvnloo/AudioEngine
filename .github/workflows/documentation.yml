@@ -33,7 +33,7 @@ jobs:
           echo "Installing Python dependencies..."
           python3 -m venv .venv
           source .venv/bin/activate
-          pip install beautifulsoup4 lxml
+          pip install beautifulsoup4 lxml markdown
 
       - name: Use pre-built documentation from main branch
         run: |

@@ -572,6 +572,19 @@ def replace_undocumented_in_html(html_file: Path, inline_docs: Dict[str, str]):
     return replaced_count
 
 def convert_markdown_to_html(markdown_content: str) -> str:
+    """Convert markdown content to HTML using the markdown library."""
+    try:
+        import markdown
+        # Use the markdown library with extensions for better conversion
+        md = markdown.Markdown(extensions=['extra', 'codehilite', 'toc'])
+        html_content = md.convert(markdown_content)
+        return html_content
+    except ImportError:
+        # Fallback to manual conversion if markdown library not available
+        print("⚠️ Warning: markdown library not available, using fallback conversion")
+        return convert_markdown_to_html_old(markdown_content)
+
+def convert_markdown_to_html_old(markdown_content: str) -> str:
     """Convert markdown content to HTML suitable for insertion into docs."""
     lines = markdown_content.split('\n')
     html_lines = []
