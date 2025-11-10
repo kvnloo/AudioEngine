@@ -814,77 +814,6 @@ def update_technology_stack_page():
         'Technology Stack'
     )
 
-def main():
-    swift_dir = Path('Phase 1 Wireframe')
-    classes_dir = Path('docs/Classes')
-    extensions_dir = Path('docs/Extensions')
-
-    if not swift_dir.exists():
-        print(f"Error: Swift directory not found: {swift_dir}")
-        return
-
-    if not classes_dir.exists():
-        print(f"Error: HTML directory not found: {classes_dir}")
-        return
-
-    # Update Architecture.html from ARCHITECTURE.md
-    print("\n📄 Updating documentation pages...")
-    update_architecture_page()
-    update_technology_stack_page()
-
-    # Map Swift filenames to HTML class names and their directory when they don't match
-    filename_to_classname = {
-        'AudioSingletons': ('Audio', 'Classes'),
-        'GeneralUIColor': ('UIColor', 'Extensions'),
-        'GerneralFonts': ('UIFont', 'Extensions'),
-        'GeneralUINavigationBar': ('UINavigationBar', 'Extensions'),
-        'GeneralArray': ('Array', 'Extensions')
-    }
-
-    print("🔍 Extracting inline documentation from Swift files...")
-
-    # Collect all inline docs from all Swift files
-    all_inline_docs = {}
-
-    # Process each Swift file
-    for swift_file in swift_dir.glob('*.swift'):
-        file_stem = swift_file.stem
-
-        # Use mapped class name and directory if available
-        if file_stem in filename_to_classname:
-            class_name, doc_type = filename_to_classname[file_stem]
-            html_dir = Path(f'docs/{doc_type}')
-        else:
-            class_name = file_stem
-            html_dir = classes_dir
-
-        html_file = html_dir / f"{class_name}.html"
-
-        if not html_file.exists():
-            print(f"  ⚠️  No HTML file for {file_stem} → {class_name} in {html_dir}, skipping...")
-            continue
-
-        print(f"  📝 Processing {class_name}...")
-
-        # Extract inline docs
-        inline_docs = parse_swift_inline_docs(swift_file)
-
-        if not inline_docs:
-            print(f"      No inline docs found")
-            continue
-
-        print(f"      Found {len(inline_docs)} documented items")
-
-        # Store for summary pages
-        all_inline_docs[class_name] = inline_docs
-
-        # Replace "Undocumented" in HTML
-        replaced = replace_undocumented_in_html(html_file, inline_docs)
-        print(f"      Replaced {replaced} 'Undocumented' instances in HTML")
-
-    # Process summary pages (Classes.html and Extensions.html)
-    print("\n🔍 Processing summary pages...")
-
 def update_all_pages_navigation():
     """Add Technical Documentation section to navigation on ALL HTML pages for consistency."""
     docs_dir = Path('docs')
@@ -979,46 +908,117 @@ def update_all_pages_navigation():
 
     print(f"  ✅ Updated navigation on {pages_updated} pages")
 
-def add_class_links_to_extensions(html_file: Path):
-    """Convert class name references to proper links in Extensions.html
+def main():
+    swift_dir = Path('Phase 1 Wireframe')
+    classes_dir = Path('docs/Classes')
+    extensions_dir = Path('docs/Extensions')
 
-    This function works AFTER replace_undocumented_in_html has already converted
-    backticks to <code> tags, so it looks for <code> elements instead of backticks.
-    """
-    with open(html_file, 'r', encoding='utf-8') as f:
-        soup = BeautifulSoup(f.read(), 'html.parser')
+    if not swift_dir.exists():
+        print(f"Error: Swift directory not found: {swift_dir}")
+        return
 
-    # Dictionary of class names to link to
-    class_links = {
-        'GeneralUIButton': 'Classes/GeneralUIButton.html',
-        'GeneralUILabel': 'Classes/GeneralUILabel.html',
-        'GeneralUITextField': 'Classes/GeneralUITextField.html',
-        'GeneralUIViewController': 'Classes/GeneralUIViewController.html',
-        'EqualizerViewController': 'Classes/EqualizerViewController.html',
-        'UIButton': None  # UIButton is a system class, just keep as code
+    if not classes_dir.exists():
+        print(f"Error: HTML directory not found: {classes_dir}")
+        return
+
+    # Update Architecture.html from ARCHITECTURE.md
+    print("\n📄 Updating documentation pages...")
+    update_architecture_page()
+    update_technology_stack_page()
+
+    # Map Swift filenames to HTML class names and their directory when they don't match
+    filename_to_classname = {
+        'AudioSingletons': ('Audio', 'Classes'),
+        'GeneralUIColor': ('UIColor', 'Extensions'),
+        'GerneralFonts': ('UIFont', 'Extensions'),
+        'GeneralUINavigationBar': ('UINavigationBar', 'Extensions'),
+        'GeneralArray': ('Array', 'Extensions')
     }
 
-    links_added = 0
+    print("🔍 Extracting inline documentation from Swift files...")
 
-    # Find all abstract sections in the summary page
-    for abstract in soup.find_all('div', class_='abstract'):
-        for p in abstract.find_all('p'):
-            # Find all <code> tags that contain class names
-            for code_tag in p.find_all('code'):
-                class_name = code_tag.get_text()
-                if class_name in class_links and class_links[class_name]:
-                    # Wrap the <code> tag in an <a> link
-                    a = soup.new_tag('a', href=class_links[class_name])
-                    # Replace the code tag with link containing code tag
-                    code_tag.wrap(a)
-                    links_added += 1
+    # Collect all inline docs from all Swift files
+    all_inline_docs = {}
 
-    # Write back if changes were made
-    if links_added > 0:
-        with open(html_file, 'w', encoding='utf-8') as f:
-            f.write(str(soup))
+    # Process each Swift file
+    for swift_file in swift_dir.glob('*.swift'):
+        file_stem = swift_file.stem
 
-    return links_added
+        # Use mapped class name and directory if available
+        if file_stem in filename_to_classname:
+            class_name, doc_type = filename_to_classname[file_stem]
+            html_dir = Path(f'docs/{doc_type}')
+        else:
+            class_name = file_stem
+            html_dir = classes_dir
+
+        html_file = html_dir / f"{class_name}.html"
+
+        if not html_file.exists():
+            print(f"  ⚠️  No HTML file for {file_stem} → {class_name} in {html_dir}, skipping...")
+            continue
+
+        print(f"  📝 Processing {class_name}...")
+
+        # Extract inline docs
+        inline_docs = parse_swift_inline_docs(swift_file)
+
+        if not inline_docs:
+            print(f"      No inline docs found")
+            continue
+
+        print(f"      Found {len(inline_docs)} documented items")
+
+        # Store for summary pages
+        all_inline_docs[class_name] = inline_docs
+
+        # Replace "Undocumented" in HTML
+        replaced = replace_undocumented_in_html(html_file, inline_docs)
+        print(f"      Replaced {replaced} 'Undocumented' instances in HTML")
+
+    # Process summary pages (Classes.html and Extensions.html)
+    print("\n🔍 Processing summary pages...")
+
+    def add_class_links_to_extensions(html_file: Path):
+        """Convert class name references to proper links in Extensions.html
+
+        This function works AFTER replace_undocumented_in_html has already converted
+        backticks to <code> tags, so it looks for <code> elements instead of backticks.
+        """
+        with open(html_file, 'r', encoding='utf-8') as f:
+            soup = BeautifulSoup(f.read(), 'html.parser')
+
+        # Dictionary of class names to link to
+        class_links = {
+            'GeneralUIButton': 'Classes/GeneralUIButton.html',
+            'GeneralUILabel': 'Classes/GeneralUILabel.html',
+            'GeneralUITextField': 'Classes/GeneralUITextField.html',
+            'GeneralUIViewController': 'Classes/GeneralUIViewController.html',
+            'EqualizerViewController': 'Classes/EqualizerViewController.html',
+            'UIButton': None  # UIButton is a system class, just keep as code
+        }
+
+        links_added = 0
+
+        # Find all abstract sections in the summary page
+        for abstract in soup.find_all('div', class_='abstract'):
+            for p in abstract.find_all('p'):
+                # Find all <code> tags that contain class names
+                for code_tag in p.find_all('code'):
+                    class_name = code_tag.get_text()
+                    if class_name in class_links and class_links[class_name]:
+                        # Wrap the <code> tag in an <a> link
+                        a = soup.new_tag('a', href=class_links[class_name])
+                        # Replace the code tag with link containing code tag
+                        code_tag.wrap(a)
+                        links_added += 1
+
+        # Write back if changes were made
+        if links_added > 0:
+            with open(html_file, 'w', encoding='utf-8') as f:
+                f.write(str(soup))
+
+        return links_added
 
     # Add missing declarations to summary pages
     def add_missing_declarations_to_summary(html_file: Path):
