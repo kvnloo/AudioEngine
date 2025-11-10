@@ -696,14 +696,14 @@ def update_documentation_page(md_file: Path, html_file: Path, page_title: str):
     class_map = {}  # Map class names to their HTML file paths
 
     if classes_dir.exists():
-        for html_file in sorted(classes_dir.glob('*.html')):
-            class_name = html_file.stem
+        for class_html_file in sorted(classes_dir.glob('*.html')):
+            class_name = class_html_file.stem
             class_links.append((class_name, f'Classes/{class_name}.html'))
             class_map[class_name] = f'Classes/{class_name}.html'
 
     if extensions_dir.exists():
-        for html_file in sorted(extensions_dir.glob('*.html')):
-            ext_name = html_file.stem
+        for ext_html_file in sorted(extensions_dir.glob('*.html')):
+            ext_name = ext_html_file.stem
             extension_links.append((ext_name, f'Extensions/{ext_name}.html'))
             class_map[ext_name] = f'Extensions/{ext_name}.html'
 
