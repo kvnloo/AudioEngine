@@ -106,6 +106,45 @@ def parse_swift_inline_docs(swift_file: Path) -> Dict[str, str]:
 
     return docs
 
+def convert_backticks_to_code(text: str, soup) -> list:
+    """Convert markdown-style backticks to HTML <code> tags.
+    Returns a list of strings and BeautifulSoup tags to append to a paragraph."""
+    parts = []
+    current_text = ""
+    in_code = False
+    i = 0
+
+    while i < len(text):
+        if text[i] == '`':
+            if current_text:
+                parts.append(current_text)
+                current_text = ""
+            in_code = not in_code
+            if not in_code and i + 1 < len(text):
+                # Just closed a code block, create the tag
+                pass
+        else:
+            if in_code:
+                # Look ahead to find the closing backtick
+                end = text.find('`', i)
+                if end != -1:
+                    code_content = text[i:end]
+                    code_tag = soup.new_tag('code')
+                    code_tag.string = code_content
+                    parts.append(code_tag)
+                    i = end  # Will be incremented at loop end
+                    in_code = False
+                else:
+                    current_text += text[i]
+            else:
+                current_text += text[i]
+        i += 1
+
+    if current_text:
+        parts.append(current_text)
+
+    return parts
+
 def replace_undocumented_in_html(html_file: Path, inline_docs: Dict[str, str]):
     """Replace 'Undocumented' text in HTML with inline documentation."""
     with open(html_file, 'r', encoding='utf-8') as f:
@@ -123,7 +162,13 @@ def replace_undocumented_in_html(html_file: Path, inline_docs: Dict[str, str]):
                 # Find the <p>Undocumented</p> that's a direct child
                 p_tag = section_content.find('p', string='Undocumented')
                 if p_tag and class_name in inline_docs:
-                    p_tag.string = inline_docs[class_name]
+                    # Clear the paragraph and add formatted content
+                    p_tag.clear()
+                    doc_text = inline_docs[class_name]
+                    # Convert backticks to <code> tags
+                    parts = convert_backticks_to_code(doc_text, soup)
+                    for part in parts:
+                        p_tag.append(part)
                     replaced_count += 1
 
     # Then handle method/property level documentation
@@ -170,8 +215,12 @@ def replace_undocumented_in_html(html_file: Path, inline_docs: Dict[str, str]):
         # Find the <p>Undocumented</p> tag
         undoc_p = abstract.find('p')
         if undoc_p and undoc_p.get_text().strip() == 'Undocumented':
-            # Replace the text content
-            undoc_p.string = doc
+            # Clear the paragraph and add formatted content
+            undoc_p.clear()
+            # Convert backticks to <code> tags
+            parts = convert_backticks_to_code(doc, soup)
+            for part in parts:
+                undoc_p.append(part)
             replaced_count += 1
 
     # Dictionary mapping class/extension names to their declarations (syntax-highlighted HTML code)
